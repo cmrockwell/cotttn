@@ -1,0 +1,215 @@
+
+/*
+ * 1024 bottom navs need to be stacked 3 wide
+ * li paddings or margins
+ * 
+ */
+@media screen {
+	html { height: 100%;  }
+	body { margin: 0; padding: 0;font: 85%/1.3 Arial, Helvetica, sans-serif; color: #FFF; 
+			height: 100%; background-repeat: no-repeat; background-attachment: fixed;
+			background-color: rgb(18,66,7);
+			background-image: linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
+			background-image: -o-linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
+			background-image: -moz-linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
+			background-image: -webkit-linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
+			background-image: -ms-linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0, rgb(18,66,7)),
+				color-stop(1, rgb(189,179,45))
+			);
+		 	font-weight: normal; }
+		
+		
+	h1 {font-family: "Times New Roman", serif; margin:0;  }
+	ul {padding:0; margin:0;}
+	p {line-height: 1.6em; }
+	
+	#wrapper{margin: 0 auto; width: 95%; padding: 10px; overflow: auto; }
+	
+	#header{ background: url('../images/img03.jpg') no-repeat right bottom; height: 100px; position: relative; }
+	
+	h1 {font-weight: normal; font-size: 4em; color: #D8FF9E; position: absolute; top: 15px; left: 35px; }
+	
+	#nav { line-height: 40px; background-color: #131F00; height: 40px; padding:0 0 0 25px; 
+		list-style: none; font-size: 1.2em; }  
+	
+	#nav li { display: inline; list-style: none; padding: 0 30px; }
+	#nav li a { color: #FFF; text-decoration: none; }
+	#nav li span { color: red; text-decoration: none; font-weight: bold; }
+	#nav li a:hover {  text-decoration: underline; }
+	
+	#content { position: relative; width: 100%; }
+	
+	#rightside { background-color: #71AE15; min-height: 1090px; margin-left: 220px; padding: 1px 0px 40px 40px; 
+				color: #000; }
+	#rightside li {margin-left: 50px; padding-left: 0px; }
+	
+	h2 { font-size: 2em; font-weight: normal; color: #000; }
+	h2.title { font-size: 2.4em; font-variant: small-caps; }
+	
+	#rightside .post { margin: 30px 0 0 0; }
+	#rightside .entry { margin: 20px 0 0 0; }
+	#rightside .subtitle {font-style: italic; color: #D8FF9E; padding: 0 0 0 20px; text-align: left; list-style: square; }
+	#rightside .subtitle a { color: #D8FF9E; }
+	#rightside .button { font-size: 0.9em; color: #131F00; background-color: #D8FF9E; display: block; width: 100px; margin: 20px 0;
+						padding: 3px; text-align: center; text-transform: uppercase; text-decoration: none; }
+	#rightside p { }
+
+	#code_examples {overflow: auto; margin: 0 auto; padding: 0 15px; }
+	.code_example {float:left; margin: 0 40px 0 0; padding: 0px; display: inline; height: 500px;}
+		
+	.code_example img {height: 230px; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.40); margin: 0 auto; }
+	.code_example p { width: 250px;  }
+
+	.clear {clear: none; }
+	.clear3 {clear: both; }
+	
+	#leftside { width: 220px; position: absolute; top: 0; }
+	
+	h3 { font-size: 1.5em; font-weight: normal; color: #000; margin: 20px 0 8px; }					
+	h3 a { text-decoration: underline; font-weight: normal; color: #000; margin: 20px 0 8px; }
+						
+	#leftside ul { margin-left: 10px; }
+	
+	#leftside li { list-style: none; line-height: 35px; border-bottom: 1px #D8FF9E dashed; }
+	
+	#leftside li a { color: #fff; text-decoration: none; }
+	#leftside li a:hover { text-decoration: underline; }
+
+}
+
+
+@media screen and (max-width: 1192px)
+{
+	.clear {clear: both; }
+	.clear3 {clear: none; }	
+	.code_example { margin-right: 20px;}
+}	
+
+@media screen and (max-width: 950px)
+{
+	#wrapper { width: 699px; }
+	#header { background-position: left; }
+	#nav { padding: 0 0 0 15px; }
+	#nav li { padding: 0 20px; }
+	#content #rightside { width: 638px; background-color: #71AE15; padding: 40px 10px 10px 50px; margin: 0; }
+	#leftside { position: static; width: 100%; margin-top: 20px; }
+	#leftside, #leftside .leftside-area { text-align: left; }
+	#leftside .leftside-area { width: 200px; float:left; margin: 0 0 20px 20px;}
+	.code_example {float: none; margin: 0 auto; padding: 15px; display: block;}
+}
+
+
+@media print
+{
+	body { font: 75%/1.3 Arial, Helvetica, sans-serif; font-weight: normal; color: #000; }
+	body, h1, h2, p { margin: 0; padding: 0;}
+	h2 { margin-top: 10px; }
+	#leftside, #nav, a { display: none; }
+}
+
+
+/************************************************************************************
+COLUMN
+*************************************************************************************/
+.col {
+	background: #eee;
+	float: left;
+	margin-left: 3.2%;
+	margin-bottom: 30px;
+}
+.fullwidth .col {
+	float: none;
+	margin-left: 0;
+}
+/* grid4 col */
+.grid4 .col {
+	width: 22.6%;
+}
+/* grid3 col */
+.grid3 .col {
+	width: 31.2%;
+}
+/* grid2 col */
+.grid2 .col {
+	width: 48.4%;
+}
+/* clear col */
+.grid4 .col:nth-of-type(4n+1),
+.grid3 .col:nth-of-type(3n+1),
+.grid2 .col:nth-of-type(2n+1) {
+	margin-left: 0;
+	clear: left;
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+/* reset cols to 3-column */
+@media screen and (max-width: 740px) {
+	/* grid4 */
+	.grid4 .col {
+		width: 31.2%;
+	}
+	.grid4 .col:nth-of-type(4n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+
+/* reset cols to 2-column */
+@media screen and (max-width: 600px) {
+	/* grid4 */
+	.grid4 .col {
+		width: 48.4%;
+	}
+	.grid4 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid4 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+
+	/* grid3 */
+	.grid3 .col {
+		width: 48.4%;
+	}
+	.grid3 .col:nth-of-type(3n+1) {
+		margin-left: 3.2%;
+		clear: none;
+	}
+	.grid3 .col:nth-of-type(2n+1) {
+		margin-left: 0;
+		clear: left;
+	}
+}
+
+/* reset cols to fullwidth */
+@media screen and (max-width: 400px) {
+	/* grid4 */
+	.col {
+		width: 100% !important;
+		margin-left: 0 !important;
+		clear: none !important;
+	}
+}
+
+/* 2X size (iPhone 4 etc) */
+@media only screen and 
+        (-webkit-min-device-pixel-ratio: 1.5), only screen and 
+        (-o-min-device-pixel-ratio: 3/2), only screen and 
+        (min-device-pixel-ratio: 1.5) {
+
+}
+  
