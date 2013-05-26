@@ -1,20 +1,20 @@
 <?php
-include_once('classes/webpage.php');
+include_once('../classes/webpage.php');
 
 $IPage = new webpage();
 
 echo $IPage->doctype();
 echo $IPage->metaData();
 echo $IPage->title("Chris Rockwell");
-echo $IPage->style('css/main.css');
+echo $IPage->style('../css/main.css');
 ?>
 </head>
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding(); ?>
-	<?php echo $IPage->navBar('home'); ?>
+	<?php echo $IPage->navBar('ux',2); ?>
 <div id="content">
-   <?php echo $IPage->localNavPort('home'); ?>
+   <?php echo $IPage->localNavPort('ux'); ?>
    <div id="rightside">
 
 	<h3> Chris Rockwell's Work </h3>

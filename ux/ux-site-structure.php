@@ -1,12 +1,12 @@
 <?php
-include_once('../classes/webpage.php');
+include_once('classes/webpage.php');
 
 $IPage = new webpage();
 
 echo $IPage->doctype();
 echo $IPage->metaData();
 echo $IPage->title("Chris Rockwell");
-echo $IPage->style('../css/main.css');
+echo $IPage->style();
 ?>
 </head>
 <body>
@@ -14,7 +14,7 @@ echo $IPage->style('../css/main.css');
     <?php echo $IPage->branding(); ?>
 	<?php echo $IPage->navBar('home'); ?>
 <div id="content">
-   <?php echo $IPage->headerText("Portfolio | Web Apps");?>
+   <?php echo $IPage->headerText("UX | Site Structure");?>
 	<h3> Projects </h3>
 	<ul> 
 		<li> <a href="review/">Review</a></li>

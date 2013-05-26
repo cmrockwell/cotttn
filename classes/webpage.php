@@ -24,21 +24,21 @@ class webpage
 
     public function title($title="basic page")
     {
-        return "<title>$title</title>";
+        return "<title>".$title."</title>";
     }
     
     public function style($spath="css/main.css"){
         return '<link href="'.$spath.'" rel="stylesheet" type="text/css" />';
     }
 	
-    public function headerText($htext="This Is The Page Title")
-    {
-            $headertxt = "<h1>".$htext."</h1>";
-            return $headertxt;	
-    }
+    // public function headerText($htext="This Is The Page Title")
+    // {
+            // $headertxt = "<h1>".$htext."</h1>";
+            // return $headertxt;	
+    // }
     
     public function branding($h1Text='chris rockwell')//($ipath="images/pond.jpg", $btext="INP271 Project"){
-    {    return '<div id="header"> <h1>$h1Text</h1> </div> <!-- end header-->';
+    {    return '<div id="header"> <h1>'.$h1Text.'</h1> </div> <!-- end header-->';
         // '<div id="branding"><img src="'.$ipath.'" alt="logo" style="width:100%" />
             // <p style="top:1em; right:2em;">'.$btext.'</p>
             // </div><!-- End branding -->';
@@ -46,58 +46,103 @@ class webpage
 
     public function footer()
     {
-            $footer = '<div id="footer"><p>Chris Rockwell &copy; 2012</p></div>';
+            $footer = '<div id="footer"><p>Chris Rockwell &copy; 2013</p></div>';
             return $footer;	
     }
 
-    public function navBar($page='home') // page 1: home, 2: portfolio, 3:chris, 4:cv, 5:contact
+    public function navBar($page='home', $lvl =1) // page 1: home, 2: portfolio, 3:chris, 4:cv, 5:contact
     {
-            $navBar = '<div id="navbar">';
+            $navBar = '<div id="nav">';
             $navBar .= '<ul>';
+            $relPath = "";
+            switch($lvl)
+			{
+				case 1: 
+					break;
+				case 2:  
+					$relPath = "../";
+					break;
+				case 3:  
+					$relPath = "../../";
+					break;	
+				case 4:  
+					$relPath = "../../../";
+					break;								
+			}
+			
             switch ($page)
 			{
 			case 'home': //home
 			  $navBar .= '<li> <span> home </span> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="portfolio.php">portfolio </a> </li>
-	       			<li> <a href="chris.php">about chris</a> </li>
-	       			<li> <a href="cv.php">cv resume</a> </li>
-	       			<li> <a href="contact.php">contact cr</a> </li>';
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'portfolio': //portfolio
-			  $navBar .= '<li> <a href="index.php"> home </a> </li>
+			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
 	       			<li> <span>portfolio </span> </li>
-	       			<li> <a href="chris.php">about chris</a> </li>
-	       			<li> <a href="cv.php">cv resume</a> </li>
-	       			<li> <a href="contact.php">contact cr</a> </li>';
+	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
+			  break;
+			case 'apps': //apps
+			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+	       			<!-- <li> <a href="#">blog</a> </li> -->
+	       			<li> <a href="'.$relPath.'portfolio">portfolio </a> </li>
+	       			<li> <span>apps</span> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
+			  break;
+			case 'ux': //apps
+			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+	       			<!-- <li> <a href="#">blog</a> </li> -->
+	       			<li> <a href="'.$relPath.'portfolio">portfolio </a> </li>
+	       			<li> <a href="'.$relPath.'apps">apps </a> </li>
+	       			<li> <span>user experience</span> </li>
+	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'about': // about
-				$navBar .= '<li> <a href="index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="portfolio.php">portfolio </a> </li>
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
 	       			<li> <span>about chris</span> </li>
-	       			<li> <a href="cv.php">cv resume</a> </li>
-	       			<li> <a href="contact.php">contact cr</a> </li>';
+	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;
 			case 'cv': // cv
-				$navBar .= '<li> <a href="index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="portfolio.php">portfolio </a> </li>
-	       			<li> <a href="chris.php">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 	       			<li> <span>cv resume</span> </li>
-	       			<li> <a href="contact.php">contact cr</a> </li>';
+	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;  
 			case 'contact': // contact
-				$navBar .= '<li> <a href="index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
 		       			<!-- <li> <a href="#">blog</a> </li> -->
-		       			<li> <a href="portfolio.php">portfolio </a> </li>
-		       			<li> <a href="chris.php">about chris</a> </li>
-		       			<li> <a href="cv.php">cv resume</a> </li>
+		       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
+		       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
+	       				<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+		       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+		       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 		       			<li> <span>contact cr</span> </li>';
 				break;  
-			default:
-			  ;
+			
 			}
 			
 	       	$navBar .= ' </ul>
@@ -106,11 +151,26 @@ class webpage
     }
 
 	public function localNavPort($page='coding'){
-		$localNav = '<div id="leftside">
-       			<div class="leftside-area">';
+		$localNav = '<div id="leftside">';
 		switch ($page) {
+			case 'home':
+				$localNav .= '<div class="leftside-area">
+				<h3><a href="portfolio/coding.php">HTML &amp; CSS Web Coding</a></h3>		
+				</div>
+				<div class="leftside-area">  		
+       			<h3><a href="portfolio/ux/index.php">Designing User Experience</a></h3>
+				
+				</div>  
+				<div class="leftside-area">
+       			<h3><a href="portfolio/webapps.php"> Web Applications </a></h3>
+				</div>	
+				<div class="leftside-area">
+				<h3> <a href="portfolio/java.php"> Java Applications </a></h3>
+				</div>';
+				break;
 			case 'coding':
-				$localNav .= '<h3>HTML &amp; CSS Web Coding</h3>
+				$localNav .= '<div class="leftside-area">
+				<h3>HTML &amp; CSS Web Coding</h3>
 				<ul>					
 					<li> <a href="#liquid">Liquid Layout</a></li>
 					<li> <a href="#responsive">Responsive Design</a></li>
@@ -123,69 +183,84 @@ class webpage
 					<li> <a href="#final">Final</a></li>
 					<li> <a href="#html5">HTML5 &amp; CSS3</a></li>
 				</ul>  
-				</div>
-				<div class="leftside-area">  		
-       			<h3><a href="design-ux.html">Designing User Experience</a></h3>
-				
-				</div>  
-				<div class="leftside-area">
-       			<h3><a href="webapps.html"> Web Applications </a></h3>
-				</div>	
-				<div class="leftside-area">
-				<h3> <a href="java.html"> Java Applications </a></h3>
-				</div>';
+				</div>';				
 				break;
-			case 'design-ux':
-				$localNav .= '<div class="leftside-area">  
-				<h3><a href="coding.php">HTML &amp; CSS Web Coding</a></h3>				 
-				</div>
+			case 'ux':
+				$localNav .= '
 				<div class="leftside-area">  		
        			<h3>Designing User Experience</h3>
-				<ul>
-					<li> <a href="#">Website Competitve Analysis</a></li>
-					<li> <a href="#">Card Sort Analysis</a></li>
-					<li> <a href="#">Interface Redesign Proposal</a></li>
-					<li> <a href="#">Site Structure Analysis</a></li>
+				<ul>					
+					<li> <a href="#">Interface Redesign Proposal</a></li>					
 				</ul> 
 				</div>  
 				<div class="leftside-area">
-       			<h3> <a href="webapps.php">Web Applications</a></h3>				
+       				<h3>UX Site Analysis</h3>				
+					<ul>
+					<li> <a href="#">Website Competitve Analysis</a></li>
+					<li> <a href="#">Card Sort Testing</a></li>					
+					<li> <a href="#">Site Structure Report</a></li>
+				</ul> 
 				</div>
-				<div class="leftside-area">    	
-				<h3> <a href="java.php"> Java Applications </a></h3>
-				</div>';
+				';
 				break;
-			case 'webapps':
-				$localNav .= '<div class="leftside-area">  
-				<h3><a href="coding.php">HTML &amp; CSS Web Coding</a></h3>				 
+			case 'dwc':
+				$localNav .= '
+				<div class="leftside-area">    	
+					<h3> Android Apps </h3>
+					<ul>
+						<li> Date Wheel Classic </li>
+						<li> <a href="#">Android PWM</a></li>					
+					</ul>
 				</div>
-				<div class="leftside-area">  		
-       			<h3><a href="design-ux.php">Designing User Experience</a></h3>
-				</div>  
-				<div class="leftside-area">
-       			<h3>Web Applications</h3>
-				<ul>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
 					<li> <a href="#">MVC: Game of Life</a></li>
 					<li> <a href="#">AJAX: Mesostic</a></li>
 					<li> <a href="#">Animation: Image Transistion</a></li>
-					<li> <a href="#">Shopping Cart</a></li>
-					<li> <a href="#">JS Jasmine TDD</a></li>				
-				</ul>
+					<li> <a href="#">Jasmine TDD Example</a></li>
+					</ul>
 				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
+				</div>';
+				break;
+			case 'apps':
+				$localNav .= '
 				<div class="leftside-area">    	
-				<h3> <a href="java.php"> Java Applications </a></h3>
+					<h3> Android Apps </h3>
+					<ul>
+						<li> <a href="datewheelclassic">Date Wheel Classic</a></li>
+						<li> <a href="#">Android PWM</a></li>					
+					</ul>
+				</div>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
+					<li> <a href="#">MVC: Game of Life</a></li>
+					<li> <a href="#">AJAX: Mesostic</a></li>
+					<li> <a href="#">Animation: Image Transistion</a></li>
+					<li> <a href="#">Jasmine TDD Example</a></li>
+					</ul>
+				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
 				</div>';
 				break;
 			case 'java':
-				$localNav .= '<div class="leftside-area">  
-				<h3><a href="coding.php">HTML &amp; CSS Web Coding</a></h3>				 
-				</div>
-				<div class="leftside-area">  		
-       			<h3><a href="design-ux.php">Designing User Experience</a></h3>
-				</div>  
-				<div class="leftside-area">
-       			<h3><a href="webapps.php">Web Applications</a></h3>				
-				</div>
+				$localNav .= '
 				<div class="leftside-area">
 				<h3>Java Applications</h3>
 				<ul>
@@ -195,12 +270,10 @@ class webpage
 				</ul>  
 				</div>	';
 				break;
-			default:
-				
-				break;
+
 		}
 		$localNav .= "</div> <!--end left side-->   ";		
-       						
+       	return $localNav;					
 	}
 
 }
