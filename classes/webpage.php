@@ -203,19 +203,47 @@ class webpage
 				</div>
 				';
 				break;
-			case 'dwc':
+			case 'got':
 				$localNav .= '
 				<div class="leftside-area">    	
 					<h3> Android Apps </h3>
 					<ul>
-						<li> Date Wheel Classic </li>
-						<li> <a href="#">Android PWM</a></li>					
+						<li> <a href="datewheelclassic">Date Wheel Classic </a></li>
+						<li> <a href="android-pwm.php">Android PWM</a></li>					
 					</ul>
 				</div>
 				<div class="leftside-area"> 
 				<h3>JavaScript Apps</h3>
 					<ul>
-					<li> <a href="#">MVC: Game of Life</a></li>
+					<li> <span>MVC: Game of Life</span></li>
+					<li> <a href="mesostic_js.php">AJAX: Mesostic</a></li>
+					<li> <a href="image_animation.php">Animation: Image Transistion</a></li>
+					<li> <a href="jasmine-example.php">Jasmine TDD Example</a></li>
+					</ul>
+				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
+				</div>';
+				break;
+			case 'dwc':
+				$localNav .= '
+				<div class="leftside-area">    	
+					<h3> Android Apps </h3>
+					<ul>
+						<li> <span>Date Wheel Classic </span></li>
+						<li> <a href="../android-pwm.php">Android PWM</a></li>					
+					</ul>
+				</div>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
+					<li> <a href="../game_of_life.php">MVC: Game of Life</a></li>
 					<li> <a href="#">AJAX: Mesostic</a></li>
 					<li> <a href="#">Animation: Image Transistion</a></li>
 					<li> <a href="#">Jasmine TDD Example</a></li>
@@ -231,19 +259,47 @@ class webpage
 				</ul>
 				</div>';
 				break;
+			case 'pwm':
+				$localNav .= '
+				<div class="leftside-area">    	
+					<h3> Android Apps </h3>
+					<ul>
+						<li> <a href="datewheelclassic">Date Wheel Classic </a></li>
+						<li> <span>Android PWM</span></li>					
+					</ul>
+				</div>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
+					<li> <a href="game_of_life.php">MVC: Game of Life</a></li>
+					<li> <a href="#">AJAX: Mesostic</a></li>
+					<li> <a href="#">Animation: Image Transistion</a></li>
+					<li> <a href="#">Jasmine TDD Example</a></li>
+					</ul>
+				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
+				</div>';
+				break;	
 			case 'apps':
 				$localNav .= '
 				<div class="leftside-area">    	
 					<h3> Android Apps </h3>
 					<ul>
 						<li> <a href="datewheelclassic">Date Wheel Classic</a></li>
-						<li> <a href="#">Android PWM</a></li>					
+						<li> <a href="android-pwm.php">Android PWM</a></li>					
 					</ul>
 				</div>
 				<div class="leftside-area"> 
 				<h3>JavaScript Apps</h3>
 					<ul>
-					<li> <a href="#">MVC: Game of Life</a></li>
+					<li> <a href="game_of_life.php">MVC: Game of Life</a></li>
 					<li> <a href="#">AJAX: Mesostic</a></li>
 					<li> <a href="#">Animation: Image Transistion</a></li>
 					<li> <a href="#">Jasmine TDD Example</a></li>

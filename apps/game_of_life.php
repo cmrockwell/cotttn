@@ -1,29 +1,41 @@
 <?php
-include_once('classes/webpage.php');
+include_once('../classes/webpage.php');
 
 $IPage = new webpage();
 
 echo $IPage->doctype();
 echo $IPage->metaData();
 echo $IPage->title("Chris Rockwell");
-echo $IPage->style();
+echo $IPage->style('../css/main.css');
 ?>
+  <link href="got/css/life.css" rel="stylesheet" />
+  <script src="got/lib/jquery.js"></script>
+  <script src="got/src/Life.js"></script>
+  <script src="got/src/LifeView.js"></script>
+  
 </head>
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding(); ?>
-	<?php echo $IPage->navBar('home'); ?>
+	<?php echo $IPage->navBar('apps',3); ?>
 <div id="content">
-   <?php echo $IPage->headerText("Portfolio | Java Apps");?>
-	<h3> Projects </h3>
-	<ul> 
-		<li> <a href="review/">Review</a></li>
-		<li> <a href="mortgage/">PHP JS Mortgage Calculator</a></li>
-		<li> <a href="ajax/">AJAX Author Lookup</a></li>
-		<li> <a href="dragndrop">Drag and Drop </a></li>
-		<li> <a href="animation">Animation</a></li>
-	</ul>
+   <?php echo $IPage->localNavPort('got'); ?>
+	<div id="rightside">
+		<div id="got">
+			<button class="goBtn"> Step </button>
+			<button class="gunBtn"> Set up Gosper </button>
+			<button class="runBtn stopped"> Run </button>
+			<div id="lifegrid">
+			</div>
+		</div>			
+    </div>	
 </div><!-- End content -->
-</div><!-- End wrapper -->	
+</div><!-- End wrapper -->
+<script type="text/javascript">
+	$(function() {
+	    var view = new LifeView(new Life(38));
+	    view.init($('.lifegrid'));
+	    });
+ </script>	
 </body>
 </html>

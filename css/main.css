@@ -78,10 +78,10 @@
 	#leftside ul { margin-left: 10px; }
 	
 	#leftside li { list-style: none; line-height: 35px; border-bottom: 1px #D8FF9E dashed; }
-	
+	#leftside li span { font-weight: bold; }
 	#leftside li a { color: #fff; text-decoration: none; }
 	#leftside li a:hover { text-decoration: underline; }
-
+	#got {margin-top: 20px;}
 }
 
 

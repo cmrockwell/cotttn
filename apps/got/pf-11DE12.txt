@@ -1,0 +1,6 @@
+cell
+- count of neighbors
+- alive cell /dead
+- make alive method
+
+
