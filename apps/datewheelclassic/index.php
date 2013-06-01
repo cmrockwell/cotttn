@@ -8,34 +8,34 @@ echo $IPage->metaData();
 echo $IPage->title("Chris Rockwell");
 echo $IPage->style('../../css/main.css');
 ?>
-<script type="text/javascript" src="swfobject.js"></script>
-		<script type="text/javascript">			
-			var swfVersionStr = "10.2.153";
-			var xiSwfUrlStr = "";
-			var flashvars = {};
-			var params = {};
-			params.quality = "high";
-			params.bgcolor = "#d6d6d6";
-			params.play = "true";
-			params.loop = "false";
-			params.wmode = "direct";
-			params.scale = "showall";
-			params.menu = "false";
-			params.devicefont = "true";
-			params.salign = "";
-			params.allowscriptaccess = "sameDomain";
-			var attributes = {};
-			attributes.id = "DateWheelClassic_2";
-			attributes.name = "DateWheelClassic_2";
-			attributes.align = "middle";
-			swfobject.createCSS("html", "height:100%; background-color: #d6d6d6;");
-			swfobject.createCSS("body", "margin:0; padding:0; overflow:hidden; height:100%;");
-			swfobject.embedSWF(
-				"DateWheelClassic_2.swf", "flashContent",
-				"360", "600",
-				swfVersionStr, xiSwfUrlStr,
-				flashvars, params, attributes);
-		</script>
+<script type="text/javascript" src="swfobject.js"> </script>
+<script type="text/javascript">			
+	var swfVersionStr = "10.2.153";
+	var xiSwfUrlStr = "";
+	var flashvars = {};
+	var params = {};
+	params.quality = "high";
+	params.bgcolor = "#d6d6d6";
+	params.play = "true";
+	params.loop = "false";
+	params.wmode = "direct";
+	params.scale = "showall";
+	params.menu = "false";
+	params.devicefont = "true";
+	params.salign = "";
+	params.allowscriptaccess = "sameDomain";
+	var attributes = {};
+	attributes.id = "DateWheelClassic_2";
+	attributes.name = "DateWheelClassic_2";
+	attributes.align = "middle";
+	swfobject.createCSS("html", "height:100%; background-color: #d6d6d6;");
+	swfobject.createCSS("body", "margin:0; padding:0; overflow:hidden; height:100%;");
+	swfobject.embedSWF(
+		"DateWheelClassic_2.swf", "flashContent",
+		"360", "600",
+		swfVersionStr, xiSwfUrlStr,
+		flashvars, params, attributes);
+</script>
 </head>
 <body>
 <div id="wrapper">
@@ -61,6 +61,7 @@ echo $IPage->style('../../css/main.css');
 	</div>
 	</div> <!--end rightside-->
 </div><!-- End content -->
+<?php echo $IPage->footer(); ?> 
 </div><!-- End wrapper -->	
 </body>
 </html>

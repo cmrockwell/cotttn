@@ -87,11 +87,12 @@ LifeView.prototype.init = function (lifegrid) {
     $("button.runBtn").click(function (ev) {
     	if( $(this).hasClass('stopped') ){
     		$(this).toggleClass('stopped').toggleClass('running');
-
+			$(this).text("Stop");
     		self.startStopTimer($(this), ev);
     	} else if ($(this).hasClass('running')){
   			$(this).toggleClass('stopped').toggleClass('running');
     		clearInterval(self.timer);
+    		$(this).text("Run");
   		}	 
     });
     

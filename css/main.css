@@ -24,7 +24,7 @@
 		 	font-weight: normal; }
 		
 		
-	h1 {font-family: "Times New Roman", serif; margin:0;  }
+	h1 {font-family: "Times New Roman", serif; margin:0; height: 70px; line-height: 70px; }
 	ul {padding:0; margin:0;}
 	p {line-height: 1.6em; }
 	
@@ -44,8 +44,9 @@
 	
 	#content { position: relative; width: 100%; }
 	
-	#rightside { background-color: #71AE15; min-height: 1090px; margin-left: 220px; padding: 1px 0px 40px 40px; 
-				color: #000; }
+	#rightside { background-color: #71AE15; height: 105%; margin-left: 220px; padding: 1px 0px 40px 40px; 
+				color: #000; overflow: hidden; }
+				
 	#rightside li {margin-left: 50px; padding-left: 0px; }
 	
 	h2 { font-size: 2em; font-weight: normal; color: #000; }
@@ -72,7 +73,7 @@
 	
 	#leftside { width: 220px; position: absolute; top: 0; }
 	
-	h3 { font-size: 1.5em; font-weight: normal; color: #000; margin: 20px 0 8px; }					
+	h3 { font-size: 1.5em; font-weight: normal; color: #000; margin: 20px 0 8px; height: 26px; line-height: 26px;}					
 	h3 a { text-decoration: underline; font-weight: normal; color: #000; margin: 20px 0 8px; }
 						
 	#leftside ul { margin-left: 10px; }
@@ -81,20 +82,28 @@
 	#leftside li span { font-weight: bold; }
 	#leftside li a { color: #fff; text-decoration: none; }
 	#leftside li a:hover { text-decoration: underline; }
-	#got {margin-top: 20px;}
+	
+	#got {margin: 20px 20px 0 0;}
+	#got textarea, #got input, #got p {width: 80%; }
+
+	textarea#poem, pre#poem  {
+	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+	
+ 	}
 }
 
 
-@media screen and (max-width: 1192px)
+/*@media screen and (max-width: 1192px)
 {
 	.clear {clear: both; }
 	.clear3 {clear: none; }	
 	.code_example { margin-right: 20px;}
-}	
+}	*/
 
 @media screen and (max-width: 950px)
 {
-	#wrapper { width: 699px; }
+	#nav {line-height: 100%; }
+	/*#wrapper { width: 699px; }
 	#header { background-position: left; }
 	#nav { padding: 0 0 0 15px; }
 	#nav li { padding: 0 20px; }
@@ -102,7 +111,7 @@
 	#leftside { position: static; width: 100%; margin-top: 20px; }
 	#leftside, #leftside .leftside-area { text-align: left; }
 	#leftside .leftside-area { width: 200px; float:left; margin: 0 0 20px 20px;}
-	.code_example {float: none; margin: 0 auto; padding: 15px; display: block;}
+	.code_example {float: none; margin: 0 auto; padding: 15px; display: block;}*/
 }
 
 

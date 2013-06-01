@@ -55,6 +55,7 @@ class webpage
             $navBar = '<div id="nav">';
             $navBar .= '<ul>';
             $relPath = "";
+			
             switch($lvl)
 			{
 				case 1: 
@@ -152,6 +153,19 @@ class webpage
 
 	public function localNavPort($page='coding'){
 		$localNav = '<div id="leftside">';
+		$androidAppLinks ='<h3> Android Apps </h3>
+					<ul>
+						<li> <a href="../datewheelclassic">Date Wheel Classic</a></li>
+						<li> <a href="../android-pwm">Android PWM</a></li>					
+					</ul>';
+					
+		$jsAppLinks ='<h3>JavaScript Apps</h3> <ul>'.
+					'<li> <a href="../got">MVC: Game of Life</a></li>'.
+					'<li> <a href="../meso">AJAX: Mesostic</a></li>'.
+					'<li> <a href="../img-trans">Animation: Image Transistion</a></li>'.
+					'<li> <a href="../tdd-ex">Jasmine TDD Example</a></li>'.
+					'</ul>';
+							
 		switch ($page) {
 			case 'home':
 				$localNav .= '<div class="leftside-area">
@@ -203,22 +217,66 @@ class webpage
 				</div>
 				';
 				break;
+			case 'mesostic':
+				$localNav .= '
+				<div class="leftside-area">    	
+					'.$androidAppLinks.'
+				</div>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
+					<li> <a href="../got">MVC: Game of Life </a> </li>
+					<li> <span>AJAX: Mesostic </span> </li>
+					<li> <a href="../image-trans">Animation: Image Transistion </a> </li>
+					<li> <a href="../tdd-example">Jasmine TDD Example</a></li>
+					</ul>
+				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
+				</div>';
+				break;
+			case 'img':
+				$localNav .= '
+				<div class="leftside-area">    	
+					'.$androidAppLinks.'
+				</div>
+				<div class="leftside-area"> 
+				<h3>JavaScript Apps</h3>
+					<ul>
+					<li> <a href="../got">MVC: Game of Life </a> </li>
+					<li> <a href="../meso">AJAX: Mesostic </a> </li>
+					<li> <span>Animation: Image Transistion </span> </li>
+					<li> <a href="../tdd-example">Jasmine TDD Example</a></li>
+					</ul>
+				</div>
+				<div class="leftside-area">  
+       			<h3>Web Apps</h3>
+				<ul>
+					<li> <a href="#">Rails: Mesostica</a></li>
+					<li> <a href="#">Shopping Cart</a></li>					
+					<li> <a href="#">Contact List</a></li>
+					<li> <a href="#">Mortgage Calculator</a></li>									
+				</ul>
+				</div>';
+				break;	
 			case 'got':
 				$localNav .= '
 				<div class="leftside-area">    	
-					<h3> Android Apps </h3>
-					<ul>
-						<li> <a href="datewheelclassic">Date Wheel Classic </a></li>
-						<li> <a href="android-pwm.php">Android PWM</a></li>					
-					</ul>
+					'.$androidAppLinks.'
 				</div>
 				<div class="leftside-area"> 
 				<h3>JavaScript Apps</h3>
 					<ul>
 					<li> <span>MVC: Game of Life</span></li>
-					<li> <a href="mesostic_js.php">AJAX: Mesostic</a></li>
-					<li> <a href="image_animation.php">Animation: Image Transistion</a></li>
-					<li> <a href="jasmine-example.php">Jasmine TDD Example</a></li>
+					<li> <a href="../meso">AJAX: Mesostic</a></li>
+					<li> <a href="../image-trans">Animation: Image Transistion</a></li>
+					<li> <a href="../tdd-example">Jasmine TDD Example</a></li>
 					</ul>
 				</div>
 				<div class="leftside-area">  
@@ -232,23 +290,17 @@ class webpage
 				</div>';
 				break;
 			case 'dwc':
-				$localNav .= '
-				<div class="leftside-area">    	
+				$localNav .= 
+				'<div class="leftside-area"> 	
 					<h3> Android Apps </h3>
 					<ul>
 						<li> <span>Date Wheel Classic </span></li>
-						<li> <a href="../android-pwm.php">Android PWM</a></li>					
+						<li> <a href="../android-pwm">Android PWM</a></li>					
 					</ul>
 				</div>
-				<div class="leftside-area"> 
-				<h3>JavaScript Apps</h3>
-					<ul>
-					<li> <a href="../game_of_life.php">MVC: Game of Life</a></li>
-					<li> <a href="#">AJAX: Mesostic</a></li>
-					<li> <a href="#">Animation: Image Transistion</a></li>
-					<li> <a href="#">Jasmine TDD Example</a></li>
-					</ul>
-				</div>
+				<div class="leftside-area"> '
+				.$jsAppLinks.'</div>'.
+				'
 				<div class="leftside-area">  
        			<h3>Web Apps</h3>
 				<ul>
@@ -264,18 +316,12 @@ class webpage
 				<div class="leftside-area">    	
 					<h3> Android Apps </h3>
 					<ul>
-						<li> <a href="datewheelclassic">Date Wheel Classic </a></li>
+						<li> <a href="../datewheelclassic">Date Wheel Classic </a></li>
 						<li> <span>Android PWM</span></li>					
 					</ul>
 				</div>
-				<div class="leftside-area"> 
-				<h3>JavaScript Apps</h3>
-					<ul>
-					<li> <a href="game_of_life.php">MVC: Game of Life</a></li>
-					<li> <a href="#">AJAX: Mesostic</a></li>
-					<li> <a href="#">Animation: Image Transistion</a></li>
-					<li> <a href="#">Jasmine TDD Example</a></li>
-					</ul>
+				<div class="leftside-area"> '
+				.$jsAppLinks.'
 				</div>
 				<div class="leftside-area">  
        			<h3>Web Apps</h3>
@@ -290,11 +336,7 @@ class webpage
 			case 'apps':
 				$localNav .= '
 				<div class="leftside-area">    	
-					<h3> Android Apps </h3>
-					<ul>
-						<li> <a href="datewheelclassic">Date Wheel Classic</a></li>
-						<li> <a href="android-pwm.php">Android PWM</a></li>					
-					</ul>
+					'.$androidAppLinks.'
 				</div>
 				<div class="leftside-area"> 
 				<h3>JavaScript Apps</h3>

@@ -1,0 +1,353 @@
+var Animate =function(element){
+	//assign ele to the element
+	this.ele = element;
+}
+/*
+The following function converts degrees to radians
+Math.cos and Math.sin work with radians, but human
+understand degrees better. That this function does is 
+make the degree 0 be the top and degree 90 be the right
+and continue clockwise. The normal conversion (degrees * Math.PI/180)
+would make the 0 degree be at the right and 90 be at the top going
+counter clockwise.
+*/
+Animate.prototype.degreesToRadians=function(degrees){
+	var radians = (180 - degrees - 90) * Math.PI/180 % (2*Math.PI);
+	return (radians < 0) ? radians + (2 * Math.PI) : radians;
+}
+
+//Does a 2D animation by entering the distance, heading, increment, and speed (boundary is optional)
+Animate.prototype.animate2D = function(distance,heading,increment,speed,boundary){
+		
+	//speed is how many pixels to move per second
+	this.speed = speed;
+	
+	//get element position
+	this.posY=this.ele.offsetTop;
+	this.posX=this.ele.offsetLeft;
+
+	
+	//boundary stuff here
+	if(boundary){
+		this.bound = boundary;
+		var sides = this.bound.getBoundingClientRect();
+		
+		this.boundWidth = this.bound.offsetWidth;
+		this.boundHeight = this.bound.offsetHeight;
+		this.boundLeft = sides.left;
+		this.boundTop = sides.top;
+		this.boundBottom = sides.bottom;
+		this.boundRight = sides.right;
+		
+
+	}
+	/*
+	get the position of the X and Y coordinate after distance and angle (degrees) are
+	given. Math.round is used because the top and left positions drop the declaration if the
+	number is too big. So the end result is a close estimate
+	*/
+	this.newX = Math.round(this.posX+(distance*Math.cos(this.degreesToRadians(heading))));
+	this.newY = Math.round(this.posY-(distance*Math.sin(this.degreesToRadians(heading))));
+		
+	/*
+	get how many pixels to move X and Y in relation to
+	the speed
+
+	*/
+	this.moveX = (this.newX-this.posX)/increment;
+	this.moveY = (this.newY-this.posY)/increment;
+	
+			
+	//create variables for min max values of X and Y
+	this.minX=0;
+	this.maxX=0;
+	this.minY=0;
+	this.maxY=0;
+	
+	/*
+	When moving an element between to points we have to make sure it is
+	staying between the points. Depending on if the element is between a
+	a large number to a small number, or visa versa. We have to set the
+	min max number of the X and Y coordinates otherwise we would have 
+	to write a lot of logic statements to figure out the between scenarios.
+	*/
+	
+	if (this.newX >= this.posX){this.minX=this.posX;this.maxX=this.newX}
+	else{this.minX=this.newX;this.maxX=this.posX}
+	
+	if (this.newY >= this.posY){this.minY=this.posY;this.maxY=this.newY}
+	else{this.minY=this.newY;this.maxY=this.posY}
+	
+	//once done call move()
+	this.move();
+}
+
+Animate.prototype.move = function(){
+	/*Gets the current X and Y position and adds the amount 
+	each is suppose to move.*/
+	this.posY += this.moveY;
+	this.posX += this.moveX;
+	
+	
+	//update the elements Left (X) and Top (Y)
+	this.ele.style.left = this.posX+"px";
+	this.ele.style.top = this.posY+"px";
+	/*
+	In using a prototype with setTimeout or setInterval
+	you need to set a local variable to this. Because if you use 
+	"this" in setTimeout or setInterval (this.move()) it will lose 
+	ownership on the first iteration.
+	*/
+	var t = this;
+	
+	
+	/*
+	This checks to see it boundary exists. If it does then checks to make sure the box does
+	not go over the boundary. If the distance is set less then the box would have to travel to
+	meet a boundary then the distance stops the box.
+	The match variable is the flag as whether to run the distance calculations or not. 
+	*/
+	var match = false;
+	if (this.bound){
+		if ((this.posX+this.ele.offsetWidth+this.boundLeft) > this.boundRight){
+			this.ele.style.left = (this.boundRight-this.boundLeft-this.ele.offsetWidth)+"px";
+			match = true;
+		}
+		else if ((this.posX+this.boundLeft) < this.boundLeft){
+			this.ele.style.left = "0px";
+			match = true;
+		}
+		else if ((this.posY+this.boundTop) < this.boundTop){
+			this.ele.style.top = "0px";
+			match = true;
+		}
+		else if ((this.posY+this.ele.offsetHeight+this.boundTop) > this.boundBottom){
+			this.ele.style.top = (this.boundBottom-this.boundTop-this.ele.offsetHeight)+"px";
+			match = true;
+		}
+		
+	}
+	/*
+	If boundary does not exist or if match = true.
+	checks to make sure the changed X and Y positions are inbetween or equal to the min and
+	max numbers, if so then calls the setTimeout*/
+	if (!match){
+		if (this.minX <= this.posX && this.posX <= this.maxX && this.minY <= this.posY && this.posY <= this.maxY){
+		//don't need the this.timer but was added for future expandability.
+		this.timer = setTimeout(function(){t.move()},this.speed);
+		}
+		/*Because we don't know where the actual stopping point will be (equal to or greater than)
+		we reset to the stopping point that is supposed to be at. */
+		else{
+			this.ele.style.left = this.newX+"px";
+			this.ele.style.top = this.newY+"px";	
+		}
+	}
+}
+/*
+This method does the carousel effect the arguements are
+rx - radius x (int)
+ry - radius y (int)
+cx - center x of the circle or elipse (int)
+cy - center y of the circle or elipse (int)
+itemType - type of item  ('img' or 'div' string)
+speed - speed (float or int)
+deadzone - how much of a range the mouse pointer can be in, which stops the carousel (int)
+mouse - using the mouse to control speed and direction or not (boolean)
+*/
+
+Animate.prototype.carousel = function(rx,ry,cx,cy,itemType,speed,deadzone,mouse){
+	//because we are using multiple methods we need to set up our values as properties
+	this.rx=rx;
+	this.ry=ry;
+	this.cx=cx;
+	this.cy=cy;
+	
+	/*
+	speed is multiplied as to make the rotation not spin too fast
+	rotationSpeed is defualt to speed but if the mouse is used it's value
+	becomes a variable
+	*/
+	this.rotationSpeed=(speed*0.00001);
+	this.deadzone = deadzone;
+	
+	//this is the position of X and Y they are set in the loop
+	this.posX=0;
+	this.posY=0;
+	
+	/*whatever element (for the carousal it needs to be a container div of images or divs) is passed 	in the constructor, its children are put into a nodelist named items.*/
+	this.items = this.ele.getElementsByTagName(itemType);
+	this.len = this.items.length;
+	
+	//arrays to be used later
+	this.angle = [];
+	this.sizes = [];
+	
+			
+	//if the mouse is true do the following	
+	if(mouse){
+		
+		/*
+		In using a prototype with setTimeout or setInterval
+		you need to set a local variable to this. Because if you use 
+		"this" in setTimeout or setInterval (this.move()) it will lose 
+		ownership on the first iteration. I also use it for the trackMouse
+		*/
+		var t=this;
+		
+		//set a property of speed to current speed.
+		this.speed=(speed*0.00001); 
+		
+		/*
+		add mouse move event listener to the window. I had to pass the function
+		this way so the "this" would refer to the object.
+		*/
+		Core.addEventListener(window,'mousemove',function(e){t.trackMouse(e)});
+	}
+	
+	/*
+	The following loop sets up the initial set of images or divs into a circle or
+	elipse
+	*/
+	for (var i=0;i<this.len;i++){
+		/*
+		returns the angle in radians, puts the angles for
+		each div or image into an array
+		*/
+		this.angle[i] = ((Math.PI * 2)/this.len) * i;
+		
+		/*
+		Because we already have everything in radians I can use Math.cos and
+		Math.sin without a conversion. This get the initial X and Y position
+		of each div or image. Math.round had to be used for numbers that got
+		too big.
+		*/
+		this.posX = Math.round(Math.cos(this.angle[i]) * this.rx)+this.cx;
+		this.posY = Math.round(Math.sin(this.angle[i]) * this.ry)+this.cy;
+		
+		//sets the X and Y position of each div or image. NOTE it set the top left corner
+		this.items[i].style.left = this.posX+"px";
+		this.items[i].style.top = this.posY+"px";
+		
+		//this sets the z index. parseInt allows it to be a integer instead of a float
+		this.items[i].style.zIndex = parseInt(this.posY);
+		
+		/*
+		gets the initial heights and widths of div or image and puts them
+		into a 2 dimensional array. We will be scaling later so we need the
+		orginal hieghts 
+		*/
+		var arr=[this.items[i].offsetHeight,this.items[i].offsetWidth];
+		this.sizes.push(arr); 
+	}
+	
+	//call this rotate
+	this.rotate();
+}	
+
+/*if mouse is being used this method tracks the mouse movement and affects the
+speed and direction of the carousel*/
+Animate.prototype.trackMouse = function(e){
+	//if the mouse it in the dead zone then stop the rotation
+	if (e.clientX < (this.cx + this.deadzone) && e.clientX > (this.cx - this.deadzone)){
+		this.rotationSpeed=0;
+	}
+	
+	/*
+	If the mouse pointer is going to the right increase rotation speed and change
+	direction.
+	When the mouse pointer is to the left or right of the dead zone the number starts
+	at zero and increases. This was done to synce the left and right sides as clientX
+	would be different number for each side.
+	*/
+	else if(e.clientX > (this.cx + this.deadzone)){
+		this.rotationSpeed = -this.speed * (e.clientX-(this.cx+this.deadzone));
+	}
+	
+	//if the mouse pointer is going to the left increase rotation speed and change direction
+	else{
+		//the Math.abs was used to make the negative number postive.
+		this.rotationSpeed = this.speed * Math.abs(e.clientX-(this.cx-this.deadzone));
+	}
+}	
+
+//This method does the rotation	
+Animate.prototype.rotate = function(){
+	for (var i=0;i<this.len;i++){
+		/*angle is increased by rotation speed, which increases speed. If the number is
+		negative carousel rotates in the oposite direction*/
+		this.angle[i]+=this.rotationSpeed;
+		
+		/*updates each div or image X Y coordinates so it give the appearance of 
+		movement.*/
+		this.posX = Math.round(Math.cos(this.angle[i]) * this.rx)+this.cx;
+		this.posY = Math.round(Math.sin(this.angle[i]) * this.ry)+this.cy;
+		this.items[i].style.left = this.posX+"px";
+		this.items[i].style.top = this.posY+"px";
+		this.items[i].style.zIndex = parseInt(this.posY);
+		
+		/*here we are changing the scale this returns a number from
+		0 - 1. The closest element towards the user (in appearence) is 1 the furthest away is 0*/
+		var delta = (this.posY - this.cy + this.ry)/(2 * this.ry);
+		
+		/*because we don't want a zero (zero would make it dissapear) we add this so we get a number
+		between .5 and 1*/
+		delta = (delta+1)/2;
+		
+		/*
+		changes the height and width of the div or image. Uses the 
+		sizes array to get the constant width of the div or image.
+		If I tried to use offsetWidth and offsetHeight here they would
+		have changed each time and eventually disappeared.
+		*/
+		this.items[i].style.height = delta * this.sizes[i][0]+"px";
+		this.items[i].style.width = delta * this.sizes[i][1]+"px"; 
+	}
+	//set t to "this" for same reason as descriped above.
+	var t=this;
+	this.timer = setTimeout(function(){t.rotate()},5);
+}
+
+/*
+The following two functions get the width and height of the browser window.
+This is helpful with centering things.
+*/
+
+Animate.prototype.getWidth = function(){
+      var x = 0;
+      if (self.innerHeight)
+      {
+              x = self.innerWidth;
+      }
+      else if (document.documentElement && document.documentElement.clientHeight)
+      {
+              x = document.documentElement.clientWidth;
+      }
+      else if (document.body)
+      {
+              x = document.body.clientWidth;
+      }
+      return x;
+}
+
+Animate.prototype.getHeight = function(){
+      var y = 0;
+      if (self.innerHeight)
+      {
+              y = self.innerHeight;
+      }
+      else if (document.documentElement && document.documentElement.clientHeight)
+      {
+              y = document.documentElement.clientHeight;
+      }
+      else if (document.body)
+      {
+              y = document.body.clientHeight;
+      }
+      return y;
+}
+	
+	
+
+
+		
