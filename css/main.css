@@ -6,7 +6,7 @@
  */
 @media screen {
 	html { height: 100%;  }
-	body { margin: 0; padding: 0;font: 85%/1.3 Arial, Helvetica, sans-serif; color: #FFF; 
+	body { margin: 0; padding: 0;font: 85%/1.3 Arial, Helvetica, sans-serif; color: #000; 
 			height: 100%; background-repeat: no-repeat; background-attachment: fixed;
 			background-color: rgb(18,66,7);
 			background-image: linear-gradient(bottom, rgb(18,66,7) 0%, rgb(189,179,45) 100%);
@@ -24,28 +24,36 @@
 		 	font-weight: normal; }
 		
 		
-	h1 {font-family: "Times New Roman", serif; margin:0; height: 70px; line-height: 70px; }
+	
 	ul {padding:0; margin:0;}
 	p {line-height: 1.6em; }
 	
-	#wrapper{margin: 0 auto; width: 95%; padding: 10px; overflow: auto; }
-	
+	#wrapper{margin: 0 auto; width: 95%; padding: 10px; /*overflow: auto;*/ }
+	strong {letter-spacing: 0.15em; font-weight: bold;}
 	#header{ background: url('../images/img03.jpg') no-repeat right bottom; height: 100px; position: relative; }
 	
-	h1 {font-weight: normal; font-size: 4em; color: #D8FF9E; position: absolute; top: 15px; left: 35px; }
+	.chris h1 {font-weight: normal; font-size: 4em; color: #D8FF9E; position: absolute; top: 15px; left: 35px;
+				font-family: "Times New Roman", serif; margin:0; height: 70px; line-height: 70px;  position:relative;}
+	.chris h1 span {font-size: .5em; letter-spacing: .15em; position:absolute; top: 5px; left: 231px;}
 	
-	#nav { line-height: 40px; background-color: #131F00; height: 40px; padding:0 0 0 25px; 
-		list-style: none; font-size: 1.2em; letter-spacing:1px}  
+	#nav { line-height: 40px; background-color: #131F00; height: 40px; padding:0 0 0 20px; margin: 0 20px 20px 20px; 
+		list-style: none; font-size: 1.2em; letter-spacing:1px; border-radius: 4px; }  
 	
 	#nav li { display: inline; list-style: none; padding: 0 30px; }
 	#nav li a { color: #FFF; text-decoration: none; }
 	#nav li span { color: red; text-decoration: none; font-weight: bold; }
 	#nav li a:hover {  text-decoration: underline; }
+	#nav li a span:hover {  text-decoration: underline; color: red;}
+	
 	
 	#content { position: relative; width: 100%; }
 	
+	/*div.cottn { background-color: #71AE15; }*/
+				
 	#rightside { background-color: #71AE15; height: 105%; margin-left: 220px; padding: 1px 0px 40px 40px; 
 				color: #000; overflow: hidden; }
+	#home { background-color: #71AE15; height: 105%; margin: 0; padding-left:40px; 
+				color: #000; overflow: hidden; }				
 				
 	#rightside li {margin-left: 50px; padding-left: 0px; }
 	
@@ -73,7 +81,7 @@
 	
 	#leftside { width: 220px; position: absolute; top: 0; }
 	
-	h3 { font-size: 1.5em; font-weight: normal; color: #000; margin: 20px 0 8px; height: 26px; line-height: 26px;}					
+	h3 { font-size: 1.5em; font-weight: normal; color: #000; margin: 20px 0 8px; line-height: 26px;}					
 	h3 a { text-decoration: underline; font-weight: normal; color: #000; margin: 20px 0 8px; }
 						
 	#leftside ul { margin-left: 10px; }

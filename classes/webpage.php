@@ -38,7 +38,7 @@ class webpage
     // }
     
     public function branding($h1Text='chris rockwell')//($ipath="images/pond.jpg", $btext="INP271 Project"){
-    {    return '<div id="header"> <h1>'.$h1Text.'</h1> </div> <!-- end header-->';
+    {    return '<div class="chris" id="header"> <h1>'.$h1Text.'</h1> </div> <!-- end header-->';
         // '<div id="branding"><img src="'.$ipath.'" alt="logo" style="width:100%" />
             // <p style="top:1em; right:2em;">'.$btext.'</p>
             // </div><!-- End branding -->';
@@ -74,74 +74,74 @@ class webpage
             switch ($page)
 			{
 			case 'home': //home
-			  $navBar .= '<li> <span> home </span> </li>
+			  $navBar .= '<li> <a href="'.$relPath.'index.php"><span>home</span></a></li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
-	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
-	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'portfolio': //portfolio
-			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
-	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <span>portfolio </span> </li>
-	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
-	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
+	       			<!-- <li> <a href="#">blog</a></li> -->
+	       			<li> <a href="'.$relPath.'portfolio/"><span>portfolio</span></a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'apps': //apps
-			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio">portfolio </a> </li>
-	       			<li> <span>apps</span> </li>
-	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'portfolio">portfolio</a></li>
+	       			<li> <a href="'.$relPath.'apps/"><span>apps</span></a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'ux': //apps
-			  $navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio">portfolio </a> </li>
-	       			<li> <a href="'.$relPath.'apps">apps </a> </li>
-	       			<li> <span>user experience</span> </li>
+	       			<li> <a href="'.$relPath.'portfolio">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'apps">apps</a> </li>
+	       			<li> <a href="'.$relPath.'ux"><span>user experience</span></a></li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'about': // about
-				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
-	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
-	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
-	       			<li> <span>about chris</span> </li>
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
+	       			<li> <a href="'.$relPath.'chris/"><span>about chris</span></a> </li>
 	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;
 			case 'cv': // cv
-				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
-	       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
-	       			<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
+	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-	       			<li> <span>cv resume</span> </li>
+	       			<li> <a href="'.$relPath.'cv/"><span>cv resume</span></a></li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;  
 			case 'contact': // contact
-				$navBar .= '<li> <a href="'.$relPath.'index.php"> home </a> </li>
+				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 		       			<!-- <li> <a href="#">blog</a> </li> -->
-		       			<li> <a href="'.$relPath.'portfolio/">portfolio </a> </li>
-		       			<li> <a href="'.$relPath.'apps/">apps </a> </li>
-	       				<li> <a href="'.$relPath.'ux/">user experience </a> </li>
+		       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+		       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
+	       				<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 		       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
 		       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
-		       			<li> <span>contact cr</span> </li>';
+		       			<li> <a href="'.$relPath.'contact/"><span>contact cr</span></a> </li>';
 				break;  
 			
 			}

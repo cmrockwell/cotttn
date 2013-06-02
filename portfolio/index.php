@@ -11,7 +11,7 @@ echo $IPage->style('../css/main.css');
 </head>
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding(); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>coding<span>'); ?>
 	<?php echo $IPage->navBar('portfolio',2); ?>
 <div id="content">
 	<?php echo $IPage->localNavPort('coding'); ?>
