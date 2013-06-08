@@ -5,7 +5,7 @@ $IPage = new webpage();
 
 echo $IPage->doctype();
 echo $IPage->metaData();
-echo $IPage->title("cotttn rockwell");
+echo $IPage->title("cotttn | home");
 
 ?>
 <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,27 +19,8 @@ echo $IPage->title("cotttn rockwell");
 
 <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3 cottn">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Android</li>
-	              <li><a href="apps/android-pwm">Android PWM</a></li>
-	              <li><a href="apps/datewheelclassic">Date Wheel Classic</a></li>              
-              <li class="nav-header">JavaScript</li>
-	              <li><a href="apps/got">Game of Life</a></li>
-	              <li><a href="apps/image-trans">Image Transition</a></li>
-	              <li><a href="apps/meso">Mesostic Generator</a></li>
-	              <li><a href="apps/tdd-example">Test Driven</a></li>                           
-              <li class="nav-header">User Experience</li>
-	              <li><a href="ux">Card Sort</a></li>
-	              <li><a href="ux">Interface Redesign</a></li>
-	              <li><a href="ux">Structural Diagrams</a></li>
-	              <li><a href="ux">Competitive Analysis</a></li>
-              <li class="nav-header">Web Coding</li>
-              	<li><a href="portfolio">HTML/CSS Examples</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+      	<?php echo $IPage->stdLocalNav(); ?>
+        <!--/span-->
         <div class="span9">
           <div class="hero-unit">
             <h2>What is <strong>cotttn</strong>?</h2>
@@ -86,7 +67,8 @@ echo $IPage->title("cotttn rockwell");
             <div class="span4">
               <h2>User Experience</h2>
               <p> <strong>cotttn</strong> apps are designed for users.  A simple concept that runs through our core.  Existing apps are great resource for user testing 
-              and lessons learned. Information organization and design princple guide out layouts. The goal for each interface is to match users' intuition and expectations.  	    
+              and lessons learned. Information organization and design princple guide out layouts. The goal for each interface is to match users' intuition and expectations. 
+              In other words, <strong>it just works.</strong>    	    
               </p>
               <p><a class="btn" href="#">View details »</a></p>
             </div><!--/span-->
@@ -111,21 +93,7 @@ echo $IPage->title("cotttn rockwell");
       </footer>
 
     </div>
-<!-- <div id="content">
-  
-   <div id="home">
 
-	<h3> Chris Rockwell's Work </h3>
-	<ul> 
-		<li> <a href="webapps.php"> Web Application Development </a></li>
-		<li> <a href="java.php"> Java, Android, Arduino &amp; Air </a></li>
-		<li> <a href="ux/"> User Experience </a></li>
-		<li> <a href="coding"> Web Coding </a></li>
-		<li> <a href="testing/"> Testing </a></li>
-		<li> <a href="mesostica/"> Rails 3 </a></li>
-	</ul>	   	
-   </div>
-</div> --><!-- End content -->
 	
 </div><!-- End wrapper -->	
 </body>

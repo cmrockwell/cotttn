@@ -50,15 +50,11 @@ class webpage
             return $footer;	
     }
 
-    public function navBar($page='home', $lvl =1) // page 1: home, 2: portfolio, 3:chris, 4:cv, 5:contact
-    {
-            $navBar = '<div id="nav">';
-            $navBar .= '<ul>';
-            $relPath = "";
-			
-            switch($lvl)
+	public function getRelative($level) {
+		switch($level)
 			{
-				case 1: 
+				case 1:
+					$relPath = "";	 
 					break;
 				case 2:  
 					$relPath = "../";
@@ -68,65 +64,75 @@ class webpage
 					break;	
 				case 4:  
 					$relPath = "../../../";
-					break;								
+					break;
+				default:
+					$relPath = "";									
 			}
-			
+		return $relPath;	
+	}
+
+    public function navBar($page='home', $lvl =1) // page 1: home, 2: portfolio, 3:chris, 4:cv, 5:contact
+    {
+            $navBar = '<div id="nav">';
+            $navBar .= '<ul>';
+            $relPath = $this->getRelative($lvl);
+
             switch ($page)
 			{
-			case 'home': //home
+			case 'home': //home //<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
 			  $navBar .= '<li> <a href="'.$relPath.'index.php"><span>home</span></a></li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
-			case 'portfolio': //portfolio
+			case 'coding': //portfolio
 			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a></li> -->
-	       			<li> <a href="'.$relPath.'portfolio/"><span>portfolio</span></a> </li>
+	       			<li> <a href="'.$relPath.'coding/"><span>coding</span></a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'apps': //apps
 			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio">portfolio</a></li>
+	       			<li> <a href="'.$relPath.'coding">coding</a></li>
 	       			<li> <a href="'.$relPath.'apps/"><span>apps</span></a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'ux': //apps
 			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'coding">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux"><span>user experience</span></a></li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
 			case 'about': // about
 				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/"><span>about chris</span></a> </li>
-	       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;
 			case 'cv': // cv
 				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
-	       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
@@ -136,11 +142,11 @@ class webpage
 			case 'contact': // contact
 				$navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 		       			<!-- <li> <a href="#">blog</a> </li> -->
-		       			<li> <a href="'.$relPath.'portfolio/">portfolio</a> </li>
+		       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 		       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       				<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 		       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
-		       			<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
+		       			
 		       			<li> <a href="'.$relPath.'contact/"><span>contact cr</span></a> </li>';
 				break;  
 			
@@ -151,6 +157,33 @@ class webpage
             return $navBar;	
     }
 
+	public function stdLocalNav($lvl=1){
+		$relPath = $this->getRelative($lvl);
+		$localNav = "<div class='span3 cottn'>
+          <div class='well sidebar-nav'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>APPS</li>
+	              <li><a href='${relPath}apps/android-pwm'>Android PWM</a></li>
+	              <li><a href='${relPath}apps/datewheelclassic'>Date Wheel Classic</a></li>              
+             
+	              <li><a href='${relPath}apps/got'>Game of Life</a></li>
+	              <li><a href='${relPath}apps/image-trans'>Image Transition</a></li>
+	              <li><a href='${relPath}apps/meso'>Mesostic Generator</a></li>
+	              <li><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
+              <li class='nav-header'>User Experience</li>
+	              <li><a href='${relPath}ux/'>Card Sort</a></li>
+	              <li><a href='${relPath}ux/'>Interface Redesign</a></li>
+	              <li><a href='${relPath}ux/'>Structural Diagrams</a></li>
+	              <li><a href='${relPath}ux/'>Competitive Analysis</a></li>
+              <li class='nav-header'>Web Coding</li>
+              	<li><a href='${relPath}coding'>HTML/CSS Examples</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div>";
+        
+        return $localNav;	
+	}
+	
 	public function localNavPort($page='coding'){
 		$localNav = '<div id="leftside">';
 		$androidAppLinks ='<h3> Android Apps </h3>
@@ -169,18 +202,16 @@ class webpage
 		switch ($page) {
 			case 'home':
 				$localNav .= '<div class="leftside-area">
-				<h3><a href="portfolio/coding.php">HTML &amp; CSS Web Coding</a></h3>		
+				<h3><a href="coding/">HTML &amp; CSS Web Coding</a></h3>		
 				</div>
 				<div class="leftside-area">  		
-       			<h3><a href="portfolio/ux/index.php">Designing User Experience</a></h3>
+       			<h3><a href="ux/">Designing User Experience</a></h3>
 				
 				</div>  
 				<div class="leftside-area">
-       			<h3><a href="portfolio/webapps.php"> Web Applications </a></h3>
+       			<h3><a href="apps/"> Web Applications </a></h3>
 				</div>	
-				<div class="leftside-area">
-				<h3> <a href="portfolio/java.php"> Java Applications </a></h3>
-				</div>';
+				';
 				break;
 			case 'coding':
 				$localNav .= '<div class="leftside-area">

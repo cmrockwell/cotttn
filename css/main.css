@@ -21,9 +21,8 @@
 				color-stop(0, rgb(18,66,7)),
 				color-stop(1, rgb(189,179,45))
 			);
-		 	font-weight: normal; }
-		
-		
+		 	font-weight: normal;    margin: 0;    padding: 0; overflow:auto;
+	}
 	
 	ul {padding:0; margin:0;}
 	p {line-height: 1.6em; }
@@ -47,11 +46,15 @@
 	
 	
 	#content { position: relative; width: 100%; }
-	
+	.contact {margin-left: 20px;}
 	/*div.cottn { background-color: #71AE15; }*/
 				
 	#rightside { background-color: #71AE15; height: 105%; margin-left: 220px; padding: 1px 0px 40px 40px; 
 				color: #000; overflow: hidden; }
+	.rightside2 {  height: 105%; overflow: auto; }
+	.thumbimg {padding: 20px 20px 20px 0; }
+	.rsgot { height: 288px; }
+								
 	#home { background-color: #71AE15; height: 105%; margin: 0; padding-left:40px; 
 				color: #000; overflow: hidden; }				
 				
@@ -64,14 +67,17 @@
 	#rightside .entry { margin: 20px 0 0 0; }
 	#rightside .subtitle {font-style: italic; color: #D8FF9E; padding: 0 0 0 20px; text-align: left; list-style: square; }
 	#rightside .subtitle a { color: #D8FF9E; }
-	#rightside .button { font-size: 0.9em; color: #131F00; background-color: #D8FF9E; display: block; width: 100px; margin: 20px 0;
-						padding: 3px; text-align: center; text-transform: uppercase; text-decoration: none; }
+	a.btn { margin-bottom: 25px; 
+		 /*font-size: 0.9em; color: #131F00; background-color: #D8FF9E; display: block; width: 100px; margin: 20px 0;
+						padding: 3px; text-align: center; text-transform: uppercase; text-decoration: none; */
+						}
 	#rightside p { }
 
 	#code_examples {overflow: auto; margin: 0 auto; padding: 0 15px; }
-	.code_example {float:left; margin: 0 40px 0 0; padding: 0px; display: inline; height: 500px;}
+	.code_example {float:left; margin: 0 40px 0 0; padding: 0px; display: inline; height: 115%;}
 	
-	#DateWheelClassic_2 {margin: 15px; border: 1px black solid; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.40);}
+	#DateWheelClassic_2 {margin: 15px; border: 1px black solid; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.40);
+				height: 605px; }
 		
 	.code_example img {height: 230px; box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.40); margin: 0 auto; }
 	.code_example p { width: 250px;  }
@@ -90,6 +96,8 @@
 	#leftside li span { font-weight: bold; }
 	#leftside li a { color: #fff; text-decoration: none; }
 	#leftside li a:hover { text-decoration: underline; }
+	
+
 	
 	#got {margin: 20px 20px 0 0;}
 	#got textarea, #got input, #got p {width: 80%; }

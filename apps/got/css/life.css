@@ -27,11 +27,17 @@ body{
 }
 
 td {
-	border: 1px solid #000;
+	border: 0px solid #000;
+	
 	width: 35px;
 	height: 20px;
 	text-align: center;
 	font: 0.75em Arial, sans-serif;
 }
+table {
+	border-collapse: separate;
+	border-spacing: 3px; 
+}
+
 td:hover {background-color: pink; color: orange; }
 

@@ -35,6 +35,10 @@ LifeView.prototype.update = function(){
 
 LifeView.prototype.init = function (lifegrid) {
 	wrapper = $(lifegrid);
+	var lg_width = $('#lifegrid').width();
+	var cell_padding = 74;
+	var cell_width = ((lg_width - cell_padding) / 37).toFixed(0) -1 ;
+	console.log('cell width '+cell_width);
 	size = this.life.board.length;	
 	this.life.makeBoard();
 	this.tdArr =  []; //new Array(); // [] 
@@ -47,7 +51,7 @@ LifeView.prototype.init = function (lifegrid) {
     	for(var j=0; j<size; j++){
     		var index = Math.round(Math.random() * (this.ltrArr.length-1));
    			var letter = this.ltrArr[index]; 
-    		var cell = $('<td></td>').addClass('cell').addClass('dead').attr('x', i).attr('y', j).attr('ltr', letter); //.text(letter+": "+i+', ' +j)
+    		var cell = $('<td></td>').addClass('cell').addClass('dead').attr('x', i).attr('y', j).attr('ltr', letter).width(cell_width).height(cell_width); //.text(letter+": "+i+', ' +j)
     		this.tdArr[i][j] = cell; 
     		row.append(cell);
     	}
@@ -73,7 +77,7 @@ LifeView.prototype.init = function (lifegrid) {
 		if (self.select){
 			self.makeAlive( $(this));	
 		}
-		ev.preventDefault();	
+		evt.preventDefault();	
 	} );
 
 	$("button.goBtn").click(function (ev) {
