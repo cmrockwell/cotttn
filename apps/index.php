@@ -33,8 +33,8 @@ echo $IPage->title("cotttn | apps");
             	It's important to make the correct choice based on the application requirements. 
             </p>
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">Date Wheel Classic</a>
-            	<a href="#" class="btn btn-primary btn-large">Android PWM</a>
+            <p><a href="./datewheelclassic" class="btn btn-primary btn-large">Date Wheel Classic</a>
+            	<a href="./android-pwm" class="btn btn-primary btn-large">Android PWM</a>
             </p>
     	</div> <!--end hero unit -->  
     	
@@ -49,9 +49,9 @@ echo $IPage->title("cotttn | apps");
             	
             </p>
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">Mesostic</a>
-            	<a href="#" class="btn btn-primary btn-large">Game of Life</a>
-            	<a href="#" class="btn btn-primary btn-large">Image Transitions</a>
+            <p><a href="./meso" class="btn btn-primary btn-large">Mesostic</a>
+            	<a href="./got" class="btn btn-primary btn-large">Game of Life</a>
+            	<a href="./image-trans" class="btn btn-primary btn-large">Image Transitions</a>
             </p>
     	</div> <!--end hero unit -->        
   
@@ -64,7 +64,7 @@ echo $IPage->title("cotttn | apps");
             </p>
             
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">Mesostica</a></p>
+            <p><a href="#" class="btn btn-primary btn-large" disabled="disabled">Mesostica (coming soon)</a></p>
     	</div> <!--end hero unit -->        
 
        			

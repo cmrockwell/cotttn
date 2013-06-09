@@ -27,7 +27,7 @@ echo $IPage->title("cotttn | ux");
             close, but in the end user testing really makes a difference.  Eliminate confusing disorganization.  Do a card sort!                	
             </p>
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">See Card Sort Test Example</a>            	
+            <p><a href="./card-sort" class="btn btn-primary btn-large">See Card Sort Test Example</a>            	
             </p>
     	</div> <!--end hero unit -->     
     			      			
@@ -39,7 +39,7 @@ echo $IPage->title("cotttn | ux");
             	a monkey see monkey do mentality. It's kaizen through benchmarking.  
             </p>            
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">See a Competitive Analysis Example</a>            	
+            <p><a href="./comp-analysis" class="btn btn-primary btn-large">See a Competitive Analysis Example</a>            	
             </p>
     	</div> <!--end hero unit -->  
       			
@@ -51,7 +51,7 @@ echo $IPage->title("cotttn | ux");
             </p>
             
             <br>
-            <p><a href="#" class="btn btn-primary btn-large">See an Interface Redesign Example</a></p>
+            <p><a href="./interface" class="btn btn-primary btn-large">See an Interface Redesign Example</a></p>
     	</div> <!--end hero unit -->        
 
        			
@@ -64,7 +64,7 @@ echo $IPage->title("cotttn | ux");
             	plan ;-)             	
             </p>
           	<br>
-            <p><a href="#" class="btn btn-primary btn-large">See a Structural Diagram Example</a></p>
+            <p><a href="./site-diagrams" class="btn btn-primary btn-large">See a Structural Diagram Example</a></p>
            
     	</div> <!--end hero unit -->         
     </div> <!--end span9 -->   		
