@@ -9,6 +9,12 @@ echo $IPage->title("cotttn | apps");
 ?>
 <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../lib/jquery.js"></script>
+<script> 
+	$(function(){		
+		$('#apps-sb').addClass('active-loc');
+	});
+</script>
 <?php echo $IPage->style('../css/main.css'); ?>
 </head>
 <body>
@@ -92,5 +98,6 @@ echo $IPage->title("cotttn | apps");
         <p>© Company 2013</p>
       </footer>
 </div><!-- End wrapper -->	
+
 </body>
 </html>

@@ -27,7 +27,7 @@
 	ul {padding:0; margin:0;}
 	p {line-height: 1.6em; }
 	
-	#wrapper{margin: 0 auto; width: 95%; padding: 10px; /*overflow: auto;*/ }
+	#wrapper{margin: 0 auto; width: 95%; padding: 10px; min-width: 1050px; /*overflow: auto;*/ }
 	strong {letter-spacing: 0.15em; font-weight: bold;}
 	#header{ background: url('../images/img03.jpg') no-repeat right bottom; height: 100px; position: relative; }
 	
@@ -43,15 +43,19 @@
 	#nav li span { color: red; text-decoration: none; font-weight: bold; }
 	#nav li a:hover {  text-decoration: underline; }
 	#nav li a span:hover {  text-decoration: underline; color: red;}
+	.sidebar-nav ul li.subpage {margin-left: 15px; }
+	.sidebar-nav li.nav-header a {color: #000; }
 	
-	
+	.active-loc {color: #FFF; background-color: #08C;}
 	#content { position: relative; width: 100%; }
 	.contact {margin-left: 20px;}
 	/*div.cottn { background-color: #71AE15; }*/
 				
 	#rightside { background-color: #71AE15; height: 105%; margin-left: 220px; padding: 1px 0px 40px 40px; 
 				color: #000; overflow: hidden; }
-	.rightside2 {  height: 105%; overflow: auto; }
+	.rightside2 {  min-height: 294px; overflow: auto; }
+	.rightside2 p, .rightside2 li  {font-size: .8em; }
+	.rightside2 li {margin-left: 50px;}
 	.thumbimg {padding: 20px 20px 20px 0; }
 	.rsgot { height: 288px; }
 								
@@ -101,6 +105,7 @@
 	
 	#got {margin: 20px 20px 0 0;}
 	#got textarea, #got input, #got p {width: 80%; }
+	
 
 	textarea#poem, pre#poem  {
 	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
@@ -109,26 +114,12 @@
 }
 
 
-/*@media screen and (max-width: 1192px)
-{
-	.clear {clear: both; }
-	.clear3 {clear: none; }	
-	.code_example { margin-right: 20px;}
-}	*/
 
-@media screen and (max-width: 950px)
+/*@media screen and (max-width: 950px)
 {
 	#nav {line-height: 100%; }
-	/*#wrapper { width: 699px; }
-	#header { background-position: left; }
-	#nav { padding: 0 0 0 15px; }
-	#nav li { padding: 0 20px; }
-	#content #rightside { width: 638px; background-color: #71AE15; padding: 40px 10px 10px 50px; margin: 0; }
-	#leftside { position: static; width: 100%; margin-top: 20px; }
-	#leftside, #leftside .leftside-area { text-align: left; }
-	#leftside .leftside-area { width: 200px; float:left; margin: 0 0 20px 20px;}
-	.code_example {float: none; margin: 0 auto; padding: 15px; display: block;}*/
-}
+
+}*/
 
 
 @media print

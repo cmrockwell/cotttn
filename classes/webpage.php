@@ -4,7 +4,8 @@
  * This class makes stanard parts for web pages
  * @author chris rockwell
  */
-
+//require_once __DIR__.'/../lib/silex/vendor/autoload.php';
+ 
 class webpage
 {
     public function docType()
@@ -46,7 +47,7 @@ class webpage
 
     public function footer()
     {
-            $footer = '<div id="footer"><p>Chris Rockwell &copy; 2013</p></div>';
+            $footer = '<hr/><div id="footer"><p>Chris Rockwell &copy; 2013</p></div>';
             return $footer;	
     }
 
@@ -85,7 +86,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
@@ -95,7 +96,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding/"><span>coding</span></a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
@@ -105,7 +106,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding">coding</a></li>
 	       			<li> <a href="'.$relPath.'apps/"><span>apps</span></a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
@@ -115,7 +116,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux"><span>user experience</span></a></li>
-	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 			  break;
@@ -125,7 +126,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'chris/"><span>about chris</span></a> </li>
+	       			<li> <a href="'.$relPath.'about/"><span>about cotttn</span></a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;
@@ -135,7 +136,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			<li> <a href="'.$relPath.'cv/"><span>cv resume</span></a></li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;  
@@ -145,7 +146,7 @@ class webpage
 		       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 		       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       				<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-		       			<li> <a href="'.$relPath.'chris/">about chris</a> </li>
+		       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 		       			
 		       			<li> <a href="'.$relPath.'contact/"><span>contact cr</span></a> </li>';
 				break;  
@@ -162,24 +163,24 @@ class webpage
 		$localNav = "<div class='span3 cottn'>
           <div class='well sidebar-nav'>
             <ul class='nav nav-list'>
-              <li class='nav-header'>APPS</li>
-	              <li><a href='${relPath}apps/android-pwm'>Android PWM</a></li>
-	              <li><a href='${relPath}apps/datewheelclassic'>Date Wheel Classic</a></li>              
+              <li class='nav-header' id='apps-sb'><a href='${relPath}apps'>APPS</a></li>
+	              <li id='pwm-sb' class='subpage'><a href='${relPath}apps/android-pwm'>Android PWM</a></li>
+	              <li id='dwc-sb' class='subpage'><a href='${relPath}apps/datewheelclassic'>Date Wheel Classic</a></li>              
              
-	              <li><a href='${relPath}apps/got'>Game of Life</a></li>
-	              <li><a href='${relPath}apps/image-trans'>Image Transition</a></li>
-	              <li><a href='${relPath}apps/meso'>Mesostic Generator</a></li>
-	              <li><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
-              <li class='nav-header'>User Experience</li>
-	              <li><a href='${relPath}ux/'>Card Sort</a></li>
-	              <li><a href='${relPath}ux/interface'>Interface Redesign</a></li>
-	              <li><a href='${relPath}ux/'>Structural Diagrams</a></li>
-	              <li><a href='${relPath}ux/'>Competitive Analysis</a></li>
-              <li class='nav-header'>Web Coding</li>
-              	<li><a href='${relPath}coding'>HTML/CSS Examples</a></li>
+	              <li class='subpage'><a href='${relPath}apps/got'>Game of Life</a></li>
+	              <li class='subpage'><a href='${relPath}apps/image-trans'>Image Transition</a></li>
+	              <li class='subpage'><a href='${relPath}apps/meso'>Mesostic Generator</a></li>
+	              <li class='subpage'><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
+              	  <li class='nav-header'><a href='${relPath}ux'>USER EXPERIENCE</a></li>
+	              <li class='subpage'><a href='${relPath}ux/card-sort'>Card Sort</a></li>
+	              <li class='subpage'><a href='${relPath}ux/interface'>Interface Redesign</a></li>
+	              <li class='subpage'><a href='${relPath}ux/site-diagrams'>Structural Diagrams</a></li>
+	              <li class='subpage'><a href='${relPath}ux/comp-analysis'>Competitive Analysis</a></li>
+              <li class='nav-header'><a href='${relPath}coding'>WEB CODING</a></li>
+              	
             </ul>
           </div><!--/.well -->
-        </div>";
+        </div>"; //<li><a href='${relPath}coding'>HTML/CSS Examples</a></li>
         
         return $localNav;	
 	}

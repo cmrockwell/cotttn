@@ -17,8 +17,8 @@ echo $IPage->title("cotttn | about");
 	<?php echo $IPage->navBar('about',2); ?>
 <div class="container-fluid">
 	<div class="row-fluid">
-	<?php echo $IPage->stdLocalNav(2); ?>
-	<div class="span9" id="android">	
+	<?/* php echo $IPage->stdLocalNav(2); */?>
+	<div class="span12" id="android">	
 		
     	<div class="hero-unit">
             <h2>about cotttn</h2>
@@ -45,9 +45,8 @@ echo $IPage->title("cotttn | about");
 	</div> <!--end row fluid -->     
 
 </div><!-- End container -->
-      <footer>
-        <p>© Company 2013</p>
-      </footer>
+
+<?php echo $IPage->footer(); ?> 
 </div><!-- End wrapper -->
 </body>
 </html>
