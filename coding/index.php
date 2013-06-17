@@ -19,9 +19,9 @@ echo $IPage->title("cottn | coding");
 	
 	<div class="container-fluid">
 	      <div class="row-fluid">
-	      	<?php echo $IPage->stdLocalNav(2); ?>
+	      
 	        <!--/span-->
-	        <div class="span9">
+	        <div class="span12">
 	          <div class="hero-unit rightside2">	
 	          		<h2><strong>cotttn</strong> coding examples</h2>
 	          		<div>

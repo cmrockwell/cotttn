@@ -19,6 +19,11 @@ echo $IPage->title("cotttn | mesostic generator");
 
 <script src="src/Mesostic.js"></script>
 <script src="src/MesoView.js"></script>   
+<script> 
+	$(function(){		
+		$('#meso-sb').addClass('active');
+	});
+</script>
 </head>
 
 <body>
@@ -31,19 +36,18 @@ echo $IPage->title("cotttn | mesostic generator");
    		<?php echo $IPage->stdLocalNav(3); ?>
 		<div class="span9 rsgot">
 			<div class="hero-unit rightside2 got">
-				<h2>What's a mesostic?</h2>
-			   	  <p>A mesostic is a poem where a vertical phrase intersects lines of horizontal text in the middle. 
+				<h2>What's a <strong>mesostic?</strong></h2>
+			   	  <p class="smaller">A mesostic is a poem where a vertical phrase intersects lines of horizontal text in the middle. 
 			   	  The poems are generated using index words from a pre-existing text. 
 			   	 	 A technique used extensively by the experimental composer John Cage. 
 			   	 	 There are three types of mesostic: Basic, 50% and 100%.</p>
 			   	 
 			   	 <ul>
-			   	 	<li>basic mesostics only restriction when selecting words from pre-existing is that it should contain the capitalized letter</li>
-			   	 	<li>in 50%, between any two capitalized letters, you can't have the second letter repeated</li>
-			   	 	<li>in 100%, between any two capitalized letters, you cannot repeat the first nor second </li>
+			   	 	<li class="smaller">basic mesostics only restriction when selecting words from pre-existing is that it should contain the capitalized letter</li>
+			   	 	<li class="smaller">in 50%, between any two capitalized letters, you can't have the second letter repeated</li>
+			   	 	<li class="smaller">in 100%, between any two capitalized letters, you cannot repeat the first nor second </li>
 			   	 </ul>
-			   	 				   	 
-				 
+			   	 
 			</div>
 		</div>
 	</div>
@@ -55,6 +59,9 @@ echo $IPage->title("cotttn | mesostic generator");
 
 					 
 					 <h3>This is a mesostic poem generator app</h3> 
+					 <div id="meso-error" class="alert alert-error">
+					 	 Please enter spine word and seed text to make a mesostic.
+					 </div>
 					  <p>Step 1: Enter a Spine word. This is the word spelled vertically in the poem </p>
 				      <label class="indent">Spine</label>
 						<input type="text" class="indent" name="spine" id ="spine" size="30" value="" 
@@ -64,7 +71,7 @@ echo $IPage->title("cotttn | mesostic generator");
 					 	
 					 	<form id="getSeedForm" class="getSeedForm"> 
 					 		<label>Search Phrase (optional): </label>
-					 		<input type="text" name="wordphrase" id="wordphrase" /> <br>
+					 		<input type="text" name="wordphrase" id="wordphrase" reqquired/> <br>
 					 		<button type="submit" id="getphrase" name="getphrase">Get Wikipedia Abstract</button> 
 					 	</form> 
 			 			<div id="inputText">

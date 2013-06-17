@@ -18,6 +18,7 @@ textarea{
 #poem textarea{ background-color:#DDD; color:#333;   }
 
 #inputText {display:inline; float: left;}
+#meso-error {display:none; }
 
 button,input {clear:both; margin: 10px 10px 10px 0px; padding: 4px 2px;}
 

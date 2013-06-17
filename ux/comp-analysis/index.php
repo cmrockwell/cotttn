@@ -14,7 +14,11 @@ echo $IPage->title("cottn | competitive analysis");
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
-
+<script> 
+	$(function(){		
+		$('#ca-sb').addClass('active');
+	});
+</script>
 </head>
 <body>
 <div id="wrapper" >
@@ -33,7 +37,7 @@ echo $IPage->title("cottn | competitive analysis");
 		        </p>
 
 		        </p>
-            	<a href="http://localhost:8081/profile/ux/comp-analysis/A2Flowers_CompAnlys.pdf"
+            	<a href="http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf"
             		class="btn btn-primary btn-large">Download PDF</a> 
 		        </div>	
 			</div>
@@ -55,7 +59,7 @@ echo $IPage->title("cottn | competitive analysis");
 </div>	
 <script>
 	$(function() {
-	    var pdfpager = new pdf_pager('http://localhost:8081/profile/ux/comp-analysis/A2Flowers_CompAnlys.pdf', 10, $('div#pager'),'the-canvas');
+	    var pdfpager = new pdf_pager('http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf', 10, $('div#pager'),'the-canvas');
 		pdfpager.getPage(1, 'the-canvas');
 	    });
 </script>

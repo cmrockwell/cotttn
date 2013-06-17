@@ -12,9 +12,13 @@ echo $IPage->title("cottn | site diagrams");
 <script src="../src/pdf_pager.js"> </script>
 <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+<script type="application/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
-
+<script> 
+	$(function(){		
+		$('#sd-sb').addClass('active');
+	});
+</script>
 </head>
 <body>
 <div id="wrapper" >
@@ -33,9 +37,9 @@ echo $IPage->title("cottn | site diagrams");
 		        </p>
 
 		        </p>
-            	<a href="http://localhost:8081/profile/ux/site-diagrams/aahom.pdf"
+            	<a href="http://cotttn.com/ux/site-diagrams/aahom.pdf"
             		class="btn btn-primary btn-large">Download Report PDF</a> 
-            	<a href="http://localhost:8081/profile/ux/site-diagrams/aahom-diagrams.pdf"
+            	<a href="http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf"
             		class="btn btn-primary btn-large">Download Diagrams PDF</a> 	
 		        </div>	
 			</div>
@@ -67,10 +71,10 @@ echo $IPage->title("cottn | site diagrams");
 	$(function() {
 		var pager = $('div#pager');
 		var canvs1 = $('canvas#the-canvas');
-	    pdfpager = new pdf_pager('http://localhost:8081/profile/ux/site-diagrams/aahom.pdf', 5, pager, 'the-canvas');
+	    pdfpager = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom.pdf', 5, pager, 'the-canvas');
 		pdfpager.getPage(1,'the-canvas');
 		
-		pdfpager2 = new pdf_pager('http://localhost:8081/profile/ux/site-diagrams/aahom-diagrams.pdf',
+		pdfpager2 = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf',
 		 	7, $('div#pager2'),'the-canvas2');
 		pdfpager2.getPage(1, 'the-canvas2');
 	    });

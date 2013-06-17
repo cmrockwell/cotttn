@@ -10,11 +10,7 @@ echo $IPage->title("cotttn | apps");
 <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="../lib/jquery.js"></script>
-<script> 
-	$(function(){		
-		$('#apps-sb').addClass('active-loc');
-	});
-</script>
+
 <?php echo $IPage->style('../css/main.css'); ?>
 </head>
 <body>
@@ -27,7 +23,7 @@ echo $IPage->title("cotttn | apps");
 	<?php echo $IPage->stdLocalNav(2); ?>
 	<div class="span9" id="android">	      			
     	<div class="hero-unit">
-            <h2>Android</h2>
+            <h2 id='android'>Android</h2>
             <p>
             	Android apps are written in the Java language. The language is rich and mature. 
             	Java has lots of great tools that enable programming productivity. Test Driven paradigm fits nicely
@@ -45,7 +41,7 @@ echo $IPage->title("cotttn | apps");
     	</div> <!--end hero unit -->  
     	
     	<div class="hero-unit">
-            <h2>JavaScript</h2>
+            <h2 id="JavaScript">JavaScript</h2>
             <p>
             	Today's browsers are so capable. AJAX opened the door for asynchronous updates.   
             	Possibilities are in a word, Limitless. Reminds me of the Matrix scene with Neo and spoon-boy.             	
@@ -63,7 +59,7 @@ echo $IPage->title("cotttn | apps");
   
       			
     	<div class="hero-unit">
-            <h2>Ruby on Rails</h2>
+            <h2 id="ServerSide">Ruby on Rails</h2>
             <p>
             	Rails is super.  Why spend time to solving the same problems repeatedly? 
             	The Rails web framework offers sensible conventions that expedite the development of new applications. Like Mesostica!

@@ -12,6 +12,6 @@ class ContactMailer
 
         $header = 'From: '.$from;
 
-        mail('myemail@example.com', 'contact form request', $header);
+        mail('chrisisinthehouse@gmail.com', 'contact form request', $header);
     }
 }

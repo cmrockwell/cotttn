@@ -15,55 +15,63 @@ var MesoView = function (mesostic) {
 MesoView.prototype.init = function (c) {
 	// get the default textbox values via ajax call
 	this.getParams();
-	this.setDefault();
-	
-	//this.mesostic.makeNonPure();
-	//this.display();
+
 	mesoview = this;
 	wrapper = c;
-	/*$('textarea').focus(function(){ // in case the spine text should be cleared on the first focus
- 		$(this).empty();
-	});*/
+
+	var checkInput = function(){
+		var spineWord = $('#spine').val(); 
+		var seedText = $('div#inputText textarea').val();
+
+		if(seedText!='' && spineWord!=''){
+			$('#meso-error').hide();
+			return true;
+		} else { 
+			$('#meso-error').show();
+			return false;
+		}
+	}
 
 	$('input#spine').blur(function(){
 		mesoview.mesostic.setSpine($('input#spine').val());		
 	});
 	
 	$('button#basicbtn').click(function(){
-		mesoview.mesostic.reset();
-		mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
-		//alert(mesoview.mesostic.getSpine());
-		mesoview.mesostic.makeNonPure();
-		mesoview.display(true); 
-			
-		//mesoview.mesostic.type='basic';
+		if(checkInput()===true){
+			mesoview.mesostic.reset();
+			mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
+			mesoview.mesostic.makeNonPure();
+			mesoview.display(true);
+		}
 	});
 	
-	$('button#btn50').click(function(){
-		mesoview.mesostic.reset();
-		mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
-		//alert(mesoview.mesostic.getSpine());
-		mesoview.mesostic.makePure(50);
-		mesoview.display(true);
-		//mesoview.mesostic.type='50'; 		
+	$('button#btn50').click(function(){		
+		if(checkInput()===true){
+			mesoview.mesostic.reset();
+			mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
+			//alert(mesoview.mesostic.getSpine());
+			mesoview.mesostic.makePure(50);
+			mesoview.display(true);
+		}		
 	});
 
 	$('button#btn100').click(function(){
-		mesoview.mesostic.reset();
-		mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
-		//alert(mesoview.mesostic.getSpine());
-		mesoview.mesostic.makePure(100);
-		mesoview.display(true); 	
-			
+		if(checkInput()===true){
+			mesoview.mesostic.reset();
+			mesoview.mesostic.init($('#spine').val() , $('div#inputText textarea').val());
+			//alert(mesoview.mesostic.getSpine());
+			mesoview.mesostic.makePure(100);
+			mesoview.display(true); 	
+		}				
 	});	
 
 		
-	$('a#getseed').click(function(e){
-		e.preventDefault(); //str.replace(/[^\w\s]|_/g, function ($1) { return ' ' + $1 + ' ';}).replace(/[ ]+/g, ' ').split(' ');
+	$('a#controlform').click(function(e){
+		e.preventDefault(); //
 		extract="";
 		mesoview.words = mesoview.mesostic.getSpine().replace(/(\s+|[^\w]+)/g, function($1){return " ";}).split(' '); // make array of just words
 		mesoview.wordIndex =0;
-
+		console.log('get phrase');
 		mesoview.showSeedForm();
 		
 	});	
@@ -103,7 +111,6 @@ MesoView.prototype.init = function (c) {
  		
  		var jsonPoem = JSON.stringify(poemToSave);
  		
-		//Core.sendRequest('classes/Mesostics.php?save',saveCallBack,jsonPoem);
 		
 		$.ajax({
 		  url:"classes/Mesostics.php?save",
@@ -112,7 +119,14 @@ MesoView.prototype.init = function (c) {
 		  contentType:"application/json; charset=utf-8",
 		  dataType:"json",
 		  success: saveCallBack	}) 
- 		});		
+ 		});	
+
+ 	 $('button#getphrase').click(function(e){
+ 		e.preventDefault();
+ 		var phrase = encodeURIComponent($('#wordphrase').val()); 
+ 		startAjax(phrase);
+ 		//mesoview.closeSeedView('getSeedDiv');
+ 	});		
 }
 
 MesoView.prototype.showShareWin = function(){
@@ -175,17 +189,7 @@ MesoView.prototype.showSeedForm = function(){
  		e.preventDefault();
  		startAjax(mesoview.words.shift(), true);
  		mesoview.closeSeedView('getSeedDiv');
- 		/*$.ajax({
-  			url: "http://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro&explaintext&titles="+mesoview.words[0]+"&format=json&redirects",
-  			type: 'GET',
-  			dataType: "jsonp",
-	    	jsonp : "callback",
-	    	jsonpCallback: "jsonpcallback"
-	    	}).success(function() {// runs after the named call back
-  				mesoview.wordIndex++;
-  				if(mesoview.words[mesoview.wordIndex])
-  					{startAjax(mesoview.words[mesoview.wordIndex]);}
-  				});*/
+
  	});
  	
  	$('button#cancel').click(function(e){
@@ -219,31 +223,12 @@ MesoView.prototype.randomizeSeed = function(){
 }
 
 MesoView.prototype.setDefault = function(){
-	// maybe ajax calls do not work over localhost.
-	//alert("http://localhost/mesostic_back_end/classes/Mesostics.php?id="+this.urlParams['id']);
-	
-	//Core.sendRequest('classes/Books.php',obj.authorResults, input);
+
 	var idParm = "0";
 	if(this.urlParams['id']!=null){
 		idParm= this.urlParams['id'];
 		}
 	Core.sendRequest('classes/Mesostics.php?id='+idParm,defaultCallBack);
-	
-	//set url attr for the < See > function
-	
-	/*$.ajax({  		
-  		url: "http://localhost/mesostic_back_end/classes/Mesostics.php?id="+this.urlParams['id'],
-  		type: 'GET',
-  		dataType: "jsonp",
-	    jsonpCallback: "mesoview.defaultCallBack",
-
-	}).success(function() {
-		var json = JSON.parse(JSON.parse(resp.responseText));
-		alert('test');
-
-		mesoview.mesostic.reset();
-		mesoview.mesostic.init(json['poems']['spine'] , json['poems']['seed'] );
-	/*});//*/	
 
 }
 
@@ -329,12 +314,6 @@ function jsonpcallback(rtndata){
 	
 	$('div#inputText textarea').val(extract);
 }
-/*
-function savePoemAjax(word, wordOrPhrase){
-	
-	Core.sendRequest('http://localhost/mesostic_back_end/classes/Mesostics.php',savePoemCallBack, JSON.stringify(mesoview.poem) );
-}*/
-
 
 function startAjax(word, wordOrPhrase){
 	

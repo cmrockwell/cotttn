@@ -13,6 +13,11 @@ echo $IPage->title("cottn | apps");
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="src/Life.js"> </script>
 <script src="src/LifeView.js"> </script>
+<script> 
+	$(function(){		
+		$('#gol-sb').addClass('active');
+	});
+</script>
 <?php echo $IPage->style('../../css/main.css'); ?>
 <?php echo $IPage->style('css/life.css'); ?>
 </head>
@@ -28,13 +33,13 @@ echo $IPage->title("cottn | apps");
 				<div class="hero-unit rightside2">	
 	          		<h2><strong>game of life </strong> a coding exercise</h2>
 	          	
-	          	<p>
+	          	<p class="smaller">
 	          		The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton
 	          		 Conway in 1970. The "game" is a zero-player game, meaning that its evolution is determined by its initial state, 
 	          		 requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing 
 	          		 how it evolves.
 		        </p>
-		        <p>
+		        <p class="smaller">
 		        	This game features Gosper's gun. In 'Life,' a <em>gun</em> is a pattern with a main part that repeats periodically, 
 		        	like an oscillator, and that also periodically emits spaceships.
 		        </p>

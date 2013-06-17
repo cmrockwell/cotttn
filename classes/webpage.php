@@ -160,6 +160,7 @@ class webpage
 
 	public function stdLocalNav($lvl=1){
 		$relPath = $this->getRelative($lvl);
+		//<li id='img-sb' class='subpage'><a href='${relPath}apps/image-trans'>Image Transition</a></li>
 		$localNav = "<div class='span3 cottn'>
           <div class='well sidebar-nav'>
             <ul class='nav nav-list'>
@@ -167,15 +168,15 @@ class webpage
 	              <li id='pwm-sb' class='subpage'><a href='${relPath}apps/android-pwm'>Android PWM</a></li>
 	              <li id='dwc-sb' class='subpage'><a href='${relPath}apps/datewheelclassic'>Date Wheel Classic</a></li>              
              
-	              <li class='subpage'><a href='${relPath}apps/got'>Game of Life</a></li>
-	              <li class='subpage'><a href='${relPath}apps/image-trans'>Image Transition</a></li>
-	              <li class='subpage'><a href='${relPath}apps/meso'>Mesostic Generator</a></li>
-	              <li class='subpage'><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
-              	  <li class='nav-header'><a href='${relPath}ux'>USER EXPERIENCE</a></li>
-	              <li class='subpage'><a href='${relPath}ux/card-sort'>Card Sort</a></li>
-	              <li class='subpage'><a href='${relPath}ux/interface'>Interface Redesign</a></li>
-	              <li class='subpage'><a href='${relPath}ux/site-diagrams'>Structural Diagrams</a></li>
-	              <li class='subpage'><a href='${relPath}ux/comp-analysis'>Competitive Analysis</a></li>
+	              <li id='gol-sb' class='subpage'><a href='${relPath}apps/got'>Game of Life</a></li>
+	              
+	              <li id='meso-sb' class='subpage'><a href='${relPath}apps/meso'>Mesostic Generator</a></li>
+	              <li id='tdd-sb' class='subpage'><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
+              	  <li id='ux-sb' class='nav-header'><a href='${relPath}ux'>USER EXPERIENCE</a></li>
+	              <li id='cs-sb' class='subpage'><a href='${relPath}ux/card-sort'>Card Sort</a></li>
+	              <li id='ir-sb'class='subpage'><a href='${relPath}ux/interface'>Interface Redesign</a></li>
+	              <li id='sd-sb' class='subpage'><a href='${relPath}ux/site-diagrams'>Structural Diagrams</a></li>
+	              <li id='ca-sb'class='subpage'><a href='${relPath}ux/comp-analysis'>Competitive Analysis</a></li>
               <li class='nav-header'><a href='${relPath}coding'>WEB CODING</a></li>
               	
             </ul>

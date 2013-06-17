@@ -14,7 +14,11 @@ echo $IPage->title("cottn | card sort");
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
-
+<script> 
+	$(function(){		
+		$('#cs-sb').addClass('active');
+	});
+</script>
 </head>
 <body>
 <div id="wrapper" >
@@ -33,7 +37,7 @@ echo $IPage->title("cottn | card sort");
 		        </p>
 
 		        </p>
-            	<a href="http://localhost:8081/profile/ux/card-sort/CellCardSort.pdf"
+            	<a href="http://cotttn.com/ux/card-sort/CellCardSort.pdf"
             		class="btn btn-primary btn-large">Download PDF</a> 
 		        </div>	
 			</div>
@@ -55,7 +59,7 @@ echo $IPage->title("cottn | card sort");
 </div>	
 <script>
 	$(function() {
-	    var pdfpager = new pdf_pager('http://localhost:8081/profile/ux/card-sort/CellCardSort.pdf', 15,$('div#pager'),'the-canvas');
+	    var pdfpager = new pdf_pager('http://cotttn.com/ux/card-sort/CellCardSort.pdf', 15,$('div#pager'),'the-canvas');
 		pdfpager.getPage(1, 'the-canvas');
 	    });
 </script>

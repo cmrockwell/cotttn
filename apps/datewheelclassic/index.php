@@ -37,6 +37,12 @@ echo $IPage->title("Chris Rockwell");
 		swfVersionStr, xiSwfUrlStr,
 		flashvars, params, attributes);
 </script>
+<script src="../../lib/jquery.js"> </script>
+<script> 
+	$(function(){		
+		$('#dwc-sb').addClass('active');
+	});
+</script>
 </head>
 
 <body>

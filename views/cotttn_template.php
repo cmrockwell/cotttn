@@ -14,6 +14,9 @@ echo $IPage->title("cotttn | ".$view);
 	<?php echo $IPage->branding('c o t t t n | <span>'.$view.'<span>'); ?>
 	<?php echo $IPage->navBar($view,2); ?>
 
-<?php require __DIR__.'/../views/'.$view.'.php'; ?>
+	<?php require __DIR__.'/../views/'.$view.'.php'; ?>
+
+<?php echo $IPage->footer(); ?> 
+</div><!-- End wrapper -->
 </body>
 </html>

@@ -3,7 +3,7 @@
 if (isset($_POST['contact'])) {
 
     if (isset($_POST['csrf_token']) == false || $_POST['csrf_token'] != $_SESSION['csrf']) {
-        $error = 'There was an issue with loading this page.';
+        $error = "There was an issue with loading this page. <a href=''>Refresh</a>";
     }
 
     $contact = new Model\Contact($_POST['contact']);
@@ -20,8 +20,10 @@ if (isset($_POST['contact'])) {
         $mailer = new Service\ContactMailer();
 
         $mailer->send($contact);
-
-        $view = 'thankyou';
+		  $sent = true ;
+		  $contact = new Model\Contact();
+        //$view = 'thankyou';
 		 
     }
 }
+?>

@@ -17,7 +17,7 @@ echo $IPage->title("cotttn | about");
 	<?php echo $IPage->navBar('about',2); ?>
 <div class="container-fluid">
 	<div class="row-fluid">
-	<?/* php echo $IPage->stdLocalNav(2); */?>
+
 	<div class="span12" id="android">	
 		
     	<div class="hero-unit">

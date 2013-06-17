@@ -19,8 +19,7 @@ echo $IPage->title("cotttn | home");
 
 <div class="container-fluid">
       <div class="row-fluid">
-      	<?/*php echo $IPage->stdLocalNav(); */?>
-        <!--/span-->
+      	
         <div class="span12">
           <div class="hero-unit">
             <h2>What is <strong>cotttn</strong>?</h2>
@@ -39,20 +38,20 @@ echo $IPage->title("cotttn | home");
               <p>Mobile apps are great.  We all love to discover a great app that is fun to use, makes life easier and fills a gap in our connected lives.  
               	Date wheel classic is a simple model of a typical business utility. Android PWM may seem not so simple. But for people that wanted
               	a utility app that connects Arduino to their Android, it's very usefull indeed. These are examples. What's your idea?</p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <p><a class="btn" href="apps#android">View details »</a></p>
             </div><!--/span-->
             <div class="span4">
               <h2>JavaScript</h2>
               <p>Long gone are the days when JavaScript was used only to add quirky animations to websites. Today JavaScript is a powerful language.
               	Node.js opens the door to server side applications. While Chrome's V8 engine and AJAX techniques make JS amazingly capable.  
               	Jasmine offers a nice test driven environment, so the JS apps can be lean and mean.</p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <p><a class="btn" href="apps#JavaScript">View details »</a></p>
             </div><!--/span-->
             <div class="span4">
               <h2>Web Coding</h2>
               <p>Crafting website interfaces that render consistently requires skillful HTML and CSS craftmanship.  With developed understanding
               	of the sites user personas along with a site's analytics, we can design a test plan to ensure the pages always look fantastic!</p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <p><a class="btn" href="coding">View details »</a></p>
             </div><!--/span-->
           </div><!--/row-->
           <div class="row-fluid">
@@ -62,7 +61,7 @@ echo $IPage->title("cotttn | home");
               	apps use the best tools for the job. Behavior and integration tools such as Rspec, Cucumber and Capybara ensure <strong>cotttn</strong> 
               	server-side features are robust and reliable.    
               </p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <p><a class="btn" href="apps#ServerSide">View details »</a></p>
             </div><!--/span-->
             <div class="span4">
               <h2>User Experience</h2>
@@ -70,14 +69,14 @@ echo $IPage->title("cotttn | home");
               and lessons learned. Information organization and design princple guide out layouts. The goal for each interface is to match users' intuition and expectations. 
               In other words, <strong>it just works.</strong>    	    
               </p>
-              <p><a class="btn" href="#">View details »</a></p>
+              <p><a class="btn" href="ux">View details »</a></p>
             </div><!--/span-->
            <div class="span4">
               <h2>Arduino</h2>
               <p> At <strong>cotttn</strong>, we love Arduino.  It's such a wonderful platform that really demystifies embedded realtime systems. 
               Prototyping with the power of this open source microcontroller opens the door to the phsyical world. The possibilities are eye popping.  	   	    
               </p>
-              <p><a class="btn" href="#">View details »</a></p>
+             
             </div><!--/span-->
           </div><!--/row-->
           
