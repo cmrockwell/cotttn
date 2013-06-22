@@ -6,15 +6,17 @@ $IPage = new webpage();
 echo $IPage->doctype();
 echo $IPage->metaData();
 echo $IPage->title("cottn | competitive analysis");
-
+//header("LOCATION: http://cotttn.com/ux/comp-analysis/");
 ?>
 <script src="../../lib/jquery.js"> </script>
+<script src="../../lib/compatibility.js"> </script>
 <script src="../src/pdf_pager.js"> </script>
 <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+<script src="../../lib/pdf.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
 <script> 
+	PDFJS.workerSrc = 'worker_loader.js';
 	$(function(){		
 		$('#ca-sb').addClass('active');
 	});
@@ -59,8 +61,21 @@ echo $IPage->title("cottn | competitive analysis");
 </div>	
 <script>
 	$(function() {
-	    var pdfpager = new pdf_pager('http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf', 10, $('div#pager'),'the-canvas');
-		pdfpager.getPage(1, 'the-canvas');
+		try{
+			var pdfpager = new pdf_pager('http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf', 10, $('div#pager'),'the-canvas');
+			pdfpager.getPage(1, 'the-canvas');
+		} catch(err){
+			$('#pager').remove();
+			$('#the-canvas').remove();
+			$('<embed/>', {
+				type: 'application/pdf',
+			    id: 'pdf-emb',
+			    src: 'http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf',
+			    width: '614px',
+			    height: '794px',
+			}).appendTo('#report');		
+		}	
+	    
 	    });
 </script>
 </body>

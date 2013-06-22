@@ -1,2 +1,3 @@
 FallbackResource /silex/web/index.php  
+Redirect 301 / http://cotttn.com/
 

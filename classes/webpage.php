@@ -25,6 +25,13 @@ class webpage
 
     public function title($title="basic page")
     {
+    	$path = $_SERVER['SCRIPT_URI'];
+    	if(preg_match("/www/", $path)) {
+			//echo "mathed";
+			$path = preg_replace('/www./', "", $path);
+			header("LOCATION: {$path}");
+		}
+    	
         return "<title>".$title."</title>";
     }
     

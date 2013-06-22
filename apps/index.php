@@ -44,16 +44,22 @@ echo $IPage->title("cotttn | apps");
             <h2 id="JavaScript">JavaScript</h2>
             <p>
             	Today's browsers are so capable. AJAX opened the door for asynchronous updates.   
-            	Possibilities are in a word, Limitless. Reminds me of the Matrix scene with Neo and spoon-boy.             	
+            	With so many frameworks available and with potential users connected at high speed 
+                with modern browsers, it's kind of like have super powers, like spoon boy from 
+                The Matrix...             	
             </p>
-            <blockquote>Neo: What truth? Spoon boy: There is no spoon. Neo: There is no spoon? Spoon boy: Then you'll see, that it is not the spoon that bends, it is only yourself.
+            <blockquote>
+                <p>Neo: What truth? </p>
+                <p>Spoon boy: There is no spoon. </p>
+                <p>Neo: There is no spoon? </p>
+                <p>Spoon boy: Then you'll see, that it is not the spoon that bends, it is only yourself. </p>
             </blockquote>
             	
             </p>
             <br>
             <p><a href="./meso" class="btn btn-primary btn-large">Mesostic</a>
             	<a href="./got" class="btn btn-primary btn-large">Game of Life</a>
-            	<a href="./image-trans" class="btn btn-primary btn-large">Image Transitions</a>
+            	<!-- <a href="./image-trans" class="btn btn-primary btn-large">Image Transitions</a> -->
             </p>
     	</div> <!--end hero unit -->        
   

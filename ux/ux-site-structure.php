@@ -7,6 +7,7 @@ echo $IPage->doctype();
 echo $IPage->metaData();
 echo $IPage->title("Chris Rockwell");
 echo $IPage->style();
+
 ?>
 </head>
 <body>

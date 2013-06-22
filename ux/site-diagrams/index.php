@@ -1,4 +1,5 @@
 <?php
+//header("LOCATION: http://cotttn.com/ux/site-diagrams/");
 include_once('../../classes/webpage.php');
 
 $IPage = new webpage();
@@ -9,12 +10,14 @@ echo $IPage->title("cottn | site diagrams");
 
 ?>
 <script src="../../lib/jquery.js"> </script>
+<script src="../../lib/compatibility.js"> </script>
 <script src="../src/pdf_pager.js"> </script>
 <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script type="application/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+<script src="../../lib/pdf.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
 <script> 
+	PDFJS.workerSrc = 'worker_loader.js';
 	$(function(){		
 		$('#sd-sb').addClass('active');
 	});
@@ -69,14 +72,36 @@ echo $IPage->title("cottn | site diagrams");
 </div>	
 <script>
 	$(function() {
-		var pager = $('div#pager');
-		var canvs1 = $('canvas#the-canvas');
-	    pdfpager = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom.pdf', 5, pager, 'the-canvas');
-		pdfpager.getPage(1,'the-canvas');
+		try{
+			var pager = $('div#pager');
+			var canvs1 = $('canvas#the-canvas');
+		    pdfpager = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom.pdf', 5, pager, 'the-canvas');
+			pdfpager.getPage(1,'the-canvas');
+			
+			pdfpager2 = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf',
+			 	7, $('div#pager2'),'the-canvas2');
+			pdfpager2.getPage(1, 'the-canvas2');
+		} catch(err){
+			$('#pager').remove();
+			$('#the-canvas').remove();
+			$('#pager2').remove();
+			$('#the-canvas2').remove();
+			$('<embed/>', {
+				type: 'application/pdf',
+			    id: 'pdf-emb',
+			    src: 'http://cotttn.com/ux/site-diagrams/aahom.pdf',
+			    width: '614px',
+			    height: '794px',
+			}).appendTo('#report');	
+			$('<embed/>', {
+				type: 'application/pdf',
+			    id: 'pdf-emb',
+			    src: 'http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf',
+			    width: '722px',
+			    height: '542px',
+			}).appendTo('#report2');	
+		}
 		
-		pdfpager2 = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf',
-		 	7, $('div#pager2'),'the-canvas2');
-		pdfpager2.getPage(1, 'the-canvas2');
 	    });
 </script>
 </body>
