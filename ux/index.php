@@ -14,9 +14,10 @@ echo $IPage->title("cotttn | ux");
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding('c o t t t n | <span>ux<span>'); ?>
-	<?php echo $IPage->navBar('ux',2); ?>
+	
 <div class="container-fluid">
-	<div class="row-fluid">
+	<?php echo $IPage->navBar('ux',2); ?>
+    <div class="row-fluid">
 	<?php echo $IPage->stdLocalNav(2); ?>
 	<div class="span9" id="android">	
 		
@@ -72,9 +73,7 @@ echo $IPage->title("cotttn | ux");
 	</div> <!--end row fluid -->     
 
 </div><!-- End container -->
-      <footer>
-        <p>© Company 2013</p>
-      </footer>
+      <?php echo $IPage->footer(); ?> 
 </div><!-- End wrapper -->
 </body>
 </html>

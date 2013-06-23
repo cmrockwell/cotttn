@@ -15,9 +15,9 @@ echo $IPage->title("cottn | coding");
 <body>
 <div id="wrapper" >
     <?php echo $IPage->branding('c o t t t n | <span>coding<span>'); ?>
-	<?php echo $IPage->navBar('coding', 2); ?>
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('coding', 2); ?>
 	      <div class="row-fluid">
 	      
 	        <!--/span-->

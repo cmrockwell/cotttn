@@ -24,10 +24,10 @@ echo $IPage->title("cottn | competitive analysis");
 </head>
 <body>
 <div id="wrapper" >
-    <?php echo $IPage->branding('c o t t t n | <span>competitive analysis<span>'); ?>
-	<?php echo $IPage->navBar('ux', 3); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>competitive analysis<span>'); ?>	
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('ux', 3); ?>
     	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9 rsgot">
@@ -62,8 +62,11 @@ echo $IPage->title("cottn | competitive analysis");
 <script>
 	$(function() {
 		try{
-			var pdfpager = new pdf_pager('http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys.pdf', 10, $('div#pager'),'the-canvas');
+			var pdfpager = new pdf_pager('http://cotttn.com/ux/comp-analysis/A2Flowers_CompAnlys17.pdf', 10, $('div#pager'),'the-canvas');
 			pdfpager.getPage(1, 'the-canvas');
+			pdfpager.progressCallback = function(data){
+				console.log(data);
+			}
 		} catch(err){
 			$('#pager').remove();
 			$('#the-canvas').remove();

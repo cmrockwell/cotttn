@@ -21,9 +21,9 @@ echo $IPage->title("cotttn | android pwm");
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding('c o t t t n | <span>android pwm<span>'); ?>
-	<?php echo $IPage->navBar('apps', 3); ?>
 	
 <div class="container-fluid">
+	<?php echo $IPage->navBar('apps', 3); ?>
 	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
       	<div class="span9">

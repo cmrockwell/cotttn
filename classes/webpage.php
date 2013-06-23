@@ -30,6 +30,10 @@ class webpage
 			//echo "mathed";
 			$path = preg_replace('/www./', "", $path);
 			header("LOCATION: {$path}");
+		} else if(preg_match("/while-1/", $path)) {
+			//echo "mathed";
+			$path = preg_replace('/while-1/', "cotttn", $path);
+			header("LOCATION: {$path}");
 		}
     	
         return "<title>".$title."</title>";
@@ -81,14 +85,15 @@ class webpage
 
     public function navBar($page='home', $lvl =1) // page 1: home, 2: portfolio, 3:chris, 4:cv, 5:contact
     {
-            $navBar = '<div id="nav">';
-            $navBar .= '<ul>';
+            $navBar = '<div id="nav" class="navbar navbar-static-top navbar-inverse">';//nav
+            $navBar .= '<div class="navbar-inner">';
+            $navBar .= '<ul class="nav">';
             $relPath = $this->getRelative($lvl);
 
             switch ($page)
 			{
 			case 'home': //home //<li> <a href="'.$relPath.'cv/">cv resume</a> </li>
-			  $navBar .= '<li> <a href="'.$relPath.'index.php"><span>home</span></a></li>
+			  $navBar .= '<li class="active"> <a href="'.$relPath.'index.php"><span>home</span></a></li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
 	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
@@ -100,7 +105,7 @@ class webpage
 			case 'coding': //portfolio
 			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a></li> -->
-	       			<li> <a href="'.$relPath.'coding/"><span>coding</span></a> </li>
+	       			<li class="active"> <a href="'.$relPath.'coding/"><span>coding</span></a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
@@ -111,7 +116,7 @@ class webpage
 			  $navBar .= '<li> <a href="'.$relPath.'index.php">home</a> </li>
 	       			<!-- <li> <a href="#">blog</a> </li> -->
 	       			<li> <a href="'.$relPath.'coding">coding</a></li>
-	       			<li> <a href="'.$relPath.'apps/"><span>apps</span></a> </li>
+	       			<li class="active"> <a href="'.$relPath.'apps/"><span>apps</span></a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
@@ -122,7 +127,7 @@ class webpage
 	       			<!-- <li> <a href="#">blog</a> </li> -->
 	       			<li> <a href="'.$relPath.'coding">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps">apps</a> </li>
-	       			<li> <a href="'.$relPath.'ux"><span>user experience</span></a></li>
+	       			<li class="active"> <a href="'.$relPath.'ux"><span>user experience</span></a></li>
 	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
@@ -133,7 +138,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'coding/">coding</a> </li>
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
-	       			<li> <a href="'.$relPath.'about/"><span>about cotttn</span></a> </li>
+	       			<li class="active"> <a href="'.$relPath.'about/"><span>about cotttn</span></a> </li>
 	       			
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;
@@ -144,7 +149,7 @@ class webpage
 	       			<li> <a href="'.$relPath.'apps/">apps</a> </li>
 	       			<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 	       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
-	       			<li> <a href="'.$relPath.'cv/"><span>cv resume</span></a></li>
+	       			<li class="active"> <a href="'.$relPath.'cv/"><span>cv resume</span></a></li>
 	       			<li> <a href="'.$relPath.'contact/">contact cr</a> </li>';
 				break;  
 			case 'contact': // contact
@@ -155,12 +160,13 @@ class webpage
 	       				<li> <a href="'.$relPath.'ux/">user experience</a> </li>
 		       			<li> <a href="'.$relPath.'about/">about cotttn</a> </li>
 		       			
-		       			<li> <a href="'.$relPath.'contact/"><span>contact cr</span></a> </li>';
+		       			<li class="active"> <a href="'.$relPath.'contact/"><span>contact cr</span></a> </li>';
 				break;  
 			
 			}
 			
 	       	$navBar .= ' </ul>
+	       		</div> <!--end nav inner-->
 	       		</div> <!--end nav-->';
             return $navBar;	
     }

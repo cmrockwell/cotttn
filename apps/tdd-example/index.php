@@ -26,9 +26,9 @@ echo $IPage->title("cottn | test driven design");
 <body>
 <div id="wrapper" >
     <?php echo $IPage->branding('c o t t t n | <span>test driven design<span>'); ?>
-	<?php echo $IPage->navBar('apps', 3); ?>
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('apps', 3); ?>
     	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9 rsgot">

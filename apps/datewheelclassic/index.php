@@ -48,9 +48,9 @@ echo $IPage->title("Chris Rockwell");
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding('c o t t t n | <span>date wheel classic </span>'); ?>
-	<?php echo $IPage->navBar('apps', 3); ?>
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('apps', 3); ?>
 		<div class="row-fluid">
 	      	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9">

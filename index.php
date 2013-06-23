@@ -14,10 +14,12 @@ echo $IPage->title("cotttn | home");
 </head>
 <body>
 <div id="wrapper" >
-    <?php echo $IPage->branding('c o t t t n | <span>connecting one thing to the NEXT<span>'); ?>
-	<?php echo $IPage->navBar('home'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>connecting one thing to the NEXT</span>'); ?>
+	
 
 <div class="container-fluid">
+      <?php echo $IPage->navBar('home'); ?>
+
       <div class="row-fluid">
       	
         <div class="span12">
@@ -27,7 +29,10 @@ echo $IPage->title("cotttn | home");
             	<strong>cotttn</strong> stands for 'connecting one thing to the next.' 
             </p>
             <p>
-            	Dreamers have ideas. <strong>cotttn</strong> is about connecting those ideas with users by building tested usable internet and mobile applications.
+            	Welcome to the personal site for Chris Rockwell. The site holds some apps, projects and papers I've made regarding 
+              programming the web and mobile and some user experience stuff. The name <strong>cotttn</strong> is about connecting ideas with 
+              users by building tested usable internet and mobile applications.  Feel free to drop me an email using the contact 
+              page.  Thanks for stopping by!
             </p>
             <br>
             <p><a href="about/" class="btn btn-primary btn-large">Learn more »</a></p>
@@ -49,8 +54,8 @@ echo $IPage->title("cotttn | home");
             </div><!--/span-->
             <div class="span4">
               <h2>Web Coding</h2>
-              <p>Crafting website interfaces that render consistently requires skillful HTML and CSS craftmanship.  With developed understanding
-              	of the sites user personas along with a site's analytics, we can design a test plan to ensure the pages always look fantastic!</p>
+              <p>Website interfaces that render consistently requires skillful HTML and CSS craftmanship.  An understanding
+              	of user personas along with a site's analytics helps create plans to ensure pages always look fantastic!</p>
               <p><a class="btn" href="coding">View details »</a></p>
             </div><!--/span-->
           </div><!--/row-->
@@ -65,16 +70,17 @@ echo $IPage->title("cotttn | home");
             </div><!--/span-->
             <div class="span4">
               <h2>User Experience</h2>
-              <p> <strong>cotttn</strong> apps are designed for users.  A simple concept that runs through our core.  Existing apps are great resource for user testing 
-              and lessons learned. Information organization and design princple guide out layouts. The goal for each interface is to match users' intuition and expectations. 
-              In other words, <strong>it just works.</strong>    	    
+              <p> <strong>cotttn</strong> apps are designed for users. Information organization and design princple 
+                guide layouts. The goal for each interface is to match users' intuition and expectations so it
+               <strong>just works.</strong>    	    
               </p>
               <p><a class="btn" href="ux">View details »</a></p>
             </div><!--/span-->
            <div class="span4">
               <h2>Arduino</h2>
-              <p> At <strong>cotttn</strong>, we love Arduino.  It's such a wonderful platform that really demystifies embedded realtime systems. 
-              Prototyping with the power of this open source microcontroller opens the door to the phsyical world. The possibilities are eye popping.  	   	    
+              <p>  Arduino is <strong>fantastic</strong>  It's such a powerful platform that really demystifies 
+                embedded realtime systems. Prototyping with the power of this open source microcontroller opens the 
+                door to the phsyical world computing. The possibilities are eye popping.  	   	    
               </p>
              
             </div><!--/span-->

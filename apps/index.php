@@ -16,10 +16,10 @@ echo $IPage->title("cotttn | apps");
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding('c o t t t n | <span>apps<span>'); ?>
-	<?php echo $IPage->navBar('apps',2); ?>
 
 <div class="container-fluid">
-	<div class="row-fluid">
+	<?php echo $IPage->navBar('apps',2); ?>
+    <div class="row-fluid">
 	<?php echo $IPage->stdLocalNav(2); ?>
 	<div class="span9" id="android">	      			
     	<div class="hero-unit">
@@ -80,14 +80,14 @@ echo $IPage->title("cotttn | apps");
             <h2>Other options: PHP &amp; Java</h2>
             
             <p>
-            	PHP is kind of my go-to swiss army knife server language. When I need something specific done on a server quickly, 
-            	lookout PHP to the rescue. Wordpress uses it, and WP powers 1 in every 6 pages on the net.            	
+            	PHP is kind of my go-to web server language. When I need something specific done on a server quickly, 
+            	lookout PHP to the rescue. This site uses it on the <a href="http://symfony.com/">Symfony</a> framework :-)            	
             </p>
             <p>
-            	I like Java because the language is rich and mature (Does that make me a gold digger?).  
+            	I like Java because the language is rich and mature.  
             	Java is my go-to language for desktop apps.  The JVM solves concerns 
             	related to cross platform operability. Plus like I said
-            	Java's loaded.
+            	Java's loaded with goodies.
             </p>
            
     	</div> <!--end hero unit -->         
@@ -96,9 +96,7 @@ echo $IPage->title("cotttn | apps");
 	</div> <!--end row fluid -->     
 
 </div><!-- End container -->
-      <footer>
-        <p>© Company 2013</p>
-      </footer>
+      <?php echo $IPage->footer(); ?> 
 </div><!-- End wrapper -->	
 
 </body>

@@ -27,9 +27,9 @@ echo $IPage->title("cottn | card sort");
 <body>
 <div id="wrapper" >
     <?php echo $IPage->branding('c o t t t n | <span>card sort<span>'); ?>
-	<?php echo $IPage->navBar('ux', 3); ?>
 	
 	<div class="container-fluid">
+    	<?php echo $IPage->navBar('ux', 3); ?>
     	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9 rsgot">
@@ -41,7 +41,7 @@ echo $IPage->title("cottn | card sort");
 		        </p>
 
 		        </p>
-            	<a href="http://cotttn.com/ux/card-sort/CellCardSort.pdf"
+            	<a href="http://cotttn.com/ux/card-sort/CellCardSort17.pdf"
             		class="btn btn-primary btn-large">Download PDF</a> 
 		        </div>	
 			</div>
@@ -65,7 +65,7 @@ echo $IPage->title("cottn | card sort");
 	$(function() {
 		try{
 			document.domain = 'cotttn.com';
-			var pdfpager = new pdf_pager('http://cotttn.com/ux/card-sort/CellCardSort.pdf', 
+			var pdfpager = new pdf_pager('http://cotttn.com/ux/card-sort/CellCardSort17.pdf', 
 				15,$('div#pager'),'the-canvas');		
 			pdfpager.getPage(1, 'the-canvas');			
 		    } catch(err) {

@@ -14,9 +14,10 @@ echo $IPage->title("cotttn | about");
 <body>
 <div id="wrapper">
     <?php echo $IPage->branding('c o t t t n | <span>about<span>'); ?>
-	<?php echo $IPage->navBar('about',2); ?>
+	
 <div class="container-fluid">
-	<div class="row-fluid">
+	<?php echo $IPage->navBar('about',2); ?>
+    <div class="row-fluid">
 
 	<div class="span12" id="android">	
 		

@@ -1,4 +1,5 @@
 <div class="container-fluid">
+	<?php echo $IPage->navBar($view,2); ?>
 	<div class="row-fluid">
 
 	<div class="span12">	

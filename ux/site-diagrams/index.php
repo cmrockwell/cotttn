@@ -25,10 +25,10 @@ echo $IPage->title("cottn | site diagrams");
 </head>
 <body>
 <div id="wrapper" >
-    <?php echo $IPage->branding('c o t t t n | <span>site diagrams<span>'); ?>
-	<?php echo $IPage->navBar('ux', 3); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>site diagrams<span>'); ?>	
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('ux', 3); ?>
     	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9 rsgot">
@@ -75,10 +75,10 @@ echo $IPage->title("cottn | site diagrams");
 		try{
 			var pager = $('div#pager');
 			var canvs1 = $('canvas#the-canvas');
-		    pdfpager = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom.pdf', 5, pager, 'the-canvas');
+		    pdfpager = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom17.pdf', 5, pager, 'the-canvas');
 			pdfpager.getPage(1,'the-canvas');
 			
-			pdfpager2 = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom-diagrams.pdf',
+			pdfpager2 = new pdf_pager('http://cotttn.com/ux/site-diagrams/aahom-diagrams17.pdf',
 			 	7, $('div#pager2'),'the-canvas2');
 			pdfpager2.getPage(1, 'the-canvas2');
 		} catch(err){

@@ -25,9 +25,9 @@ echo $IPage->title("cottn | ux");
 <body>
 <div id="wrapper" >
     <?php echo $IPage->branding('c o t t t n | <span>interface redesign<span>'); ?>
-	<?php echo $IPage->navBar('ux', 3); ?>
 	
 	<div class="container-fluid">
+		<?php echo $IPage->navBar('ux', 3); ?>
     	<div class="row-fluid">
       	<?php echo $IPage->stdLocalNav(3); ?>
 			<div class="span9 rsgot">
@@ -61,7 +61,7 @@ echo $IPage->title("cottn | ux");
 <script>
 	$(function() {
 		try{
-			var pdfpager = new pdf_pager('http://cotttn.com/ux/interface/interface_redesign.pdf', 15, $('div#pager'),'the-canvas');
+			var pdfpager = new pdf_pager('http://cotttn.com/ux/interface/interface_redesign17.pdf', 15, $('div#pager'),'the-canvas');
 			pdfpager.getPage(1, 'the-canvas');
 		} catch(err){
 			$('#pager').remove();
