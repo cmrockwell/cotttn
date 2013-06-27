@@ -11,8 +11,7 @@ echo $IPage->title("cottn | apps");
 <script src="lib/jquery.js"> </script>
 <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="src/Life.js"> </script>
-<script src="src/LifeView.js"> </script>
+
 <script> 
 	$(function(){		
 		$('#gol-sb').addClass('active');
@@ -23,7 +22,7 @@ echo $IPage->title("cottn | apps");
 </head>
 <body>
 <div id="wrapper" >
-    <?php echo $IPage->branding('c o t t t n | <span>game of life<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>game of life</span>'); ?>
 	
 	<div class="container-fluid">
 		<?php echo $IPage->navBar('apps', 3); ?>
@@ -54,7 +53,7 @@ echo $IPage->title("cottn | apps");
 					<button class="goBtn btn"> Step </button>
 					<button class="gunBtn btn"> Set up Gosper </button>
 					<button class="runBtn stopped btn"> Run </button>
-					<a href="" id="life"><button class="reset btn"> Reset </button></a>
+					<a class="reset btn" id="life" href="#life"> Reset </a> 
 					<div id="lifegrid" >
 					</div>
 				</div>			
@@ -64,11 +63,17 @@ echo $IPage->title("cottn | apps");
 	
 <?php echo $IPage->footer(); ?> 
 </div>
+<script src="src/Life.js"> </script>
+<script src="src/LifeView.js"> </script>
 <script type="text/javascript">
 	$(function() {
 	    var view = new LifeView(new Life(38));
 	    view.init($('.lifegrid'));
 	    });
+		$("#life").click(function(){
+			window.location.reload(true);	
+		});
+		
  </script>	
 </body>
 </html>

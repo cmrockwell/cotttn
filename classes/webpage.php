@@ -187,9 +187,9 @@ class webpage
 	              <li id='tdd-sb' class='subpage'><a href='${relPath}apps/tdd-example'>Test Driven</a></li>                           
               	  <li id='ux-sb' class='nav-header'><a href='${relPath}ux'>USER EXPERIENCE</a></li>
 	              <li id='cs-sb' class='subpage'><a href='${relPath}ux/card-sort'>Card Sort</a></li>
-	              <li id='ir-sb'class='subpage'><a href='${relPath}ux/interface'>Interface Redesign</a></li>
+	              <li id='ir-sb' class='subpage'><a href='${relPath}ux/interface'>Interface Redesign</a></li>
 	              <li id='sd-sb' class='subpage'><a href='${relPath}ux/site-diagrams'>Structural Diagrams</a></li>
-	              <li id='ca-sb'class='subpage'><a href='${relPath}ux/comp-analysis'>Competitive Analysis</a></li>
+	              <li id='ca-sb' class='subpage'><a href='${relPath}ux/comp-analysis'>Competitive Analysis</a></li>
               <li class='nav-header'><a href='${relPath}coding'>WEB CODING</a></li>
               	
             </ul>

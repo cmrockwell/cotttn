@@ -41,6 +41,7 @@ echo $IPage->title("Chris Rockwell");
 <script> 
 	$(function(){		
 		$('#dwc-sb').addClass('active');
+		$('#flashContent')..addClass("code_example grid4");
 	});
 </script>
 </head>
@@ -63,11 +64,10 @@ echo $IPage->title("Chris Rockwell");
 		            <p><a href="https://play.google.com/store/apps/details?id=com.chris.android.pwm" 
 								class="btn btn-primary btn-large">See on Google Play »</a> </p>
 					
-					<div id="flashContent" class="code_example grid4">
-						<a href="http://www.adobe.com/go/getflash">
-							<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
-						</a>
-						<p>This page requires Flash Player version 10.2.153 or higher.</p>
+					<div id="flashContent" >
+						
+						<p>This demo requires Flash Player version 10.2.153 or higher.
+							Or try opening the page in Chrome</p>
 					</div>
 			
 				</div>

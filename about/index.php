@@ -13,7 +13,7 @@ echo $IPage->title("cotttn | about");
 </head>
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding('c o t t t n | <span>about<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>about</span>'); ?>
 	
 <div class="container-fluid">
 	<?php echo $IPage->navBar('about',2); ?>

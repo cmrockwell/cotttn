@@ -11,7 +11,7 @@ echo $IPage->title("cotttn | ".$view);
 </head>
 <body>
 <div id="wrapper">
-	<?php echo $IPage->branding('c o t t t n | <span>'.$view.'<span>'); ?>
+	<?php echo $IPage->branding('c o t t t n | <span>'.$view.'</span>'); ?>
 
 	<?php require __DIR__.'/../views/'.$view.'.php'; ?>
 

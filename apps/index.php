@@ -15,13 +15,13 @@ echo $IPage->title("cotttn | apps");
 </head>
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding('c o t t t n | <span>apps<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>apps</span>'); ?>
 
 <div class="container-fluid">
 	<?php echo $IPage->navBar('apps',2); ?>
     <div class="row-fluid">
 	<?php echo $IPage->stdLocalNav(2); ?>
-	<div class="span9" id="android">	      			
+	<div class="span9">	      			
     	<div class="hero-unit">
             <h2 id='android'>Android</h2>
             <p>
@@ -55,7 +55,6 @@ echo $IPage->title("cotttn | apps");
                 <p>Spoon boy: Then you'll see, that it is not the spoon that bends, it is only yourself. </p>
             </blockquote>
             	
-            </p>
             <br>
             <p><a href="./meso" class="btn btn-primary btn-large">Mesostic</a>
             	<a href="./got" class="btn btn-primary btn-large">Game of Life</a>
@@ -72,7 +71,7 @@ echo $IPage->title("cotttn | apps");
             </p>
             
             <br>
-            <p><a href="#" class="btn btn-primary btn-large" disabled="disabled">Mesostica (coming soon)</a></p>
+            <p><button class="btn btn-primary btn-large disabled">Mesostica (coming soon)</button></p>
     	</div> <!--end hero unit -->        
 
        			

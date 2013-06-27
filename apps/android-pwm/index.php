@@ -15,12 +15,13 @@ echo $IPage->title("cotttn | android pwm");
 <script> 
 	$(function(){		
 		$('#pwm-sb').addClass('active');
+		$('.sidebar-nav').height($('.span9 .hero-unit').height()+80)
 	});
 </script>
 </head>
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding('c o t t t n | <span>android pwm<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>android pwm</span>'); ?>
 	
 <div class="container-fluid">
 	<?php echo $IPage->navBar('apps', 3); ?>
@@ -102,7 +103,7 @@ echo $IPage->title("cotttn | android pwm");
     			<h2>Download</h2>    			
 				<div class="code_example grid4">
 				<a href="https://play.google.com/store/apps/details?id=com.chris.android.pwm" target="none">
-							<img src='../../images/pwm1.jpg' height="100%" alt="screen shot image with buttons"></a>	
+							<img src='../../images/pwm1.jpg' alt="screen shot image with buttons"></a>	
 				</div>
 				<div class="grid4">
 					<p> <strong>android &lt;= ADB =&gt; arduino</strong></p>

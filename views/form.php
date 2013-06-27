@@ -2,7 +2,7 @@
 <?php if ($error != false) { ?>
     <div id="error"><?php echo $error; ?></div>
 <?php } ?>
-<form method="post" action="">
+<form method="post" action="contact">
     <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf']; ?>" />
     <label>Name: <input type="text"
                         placeholder="your name"

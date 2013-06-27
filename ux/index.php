@@ -13,7 +13,7 @@ echo $IPage->title("cotttn | ux");
 </head>
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding('c o t t t n | <span>ux<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>ux</span>'); ?>
 	
 <div class="container-fluid">
 	<?php echo $IPage->navBar('ux',2); ?>

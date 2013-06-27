@@ -43,7 +43,7 @@ LifeView.prototype.init = function (lifegrid) {
 	this.life.makeBoard();
 	this.tdArr =  []; //new Array(); // [] 
 	this.select = false;
-	self = this;
+	myself = this;
 	var table = $('<table></table>').addClass('board');
 	for(var i=0; i<size/2; i++){
     	var row = $('<tr></tr>');
@@ -61,29 +61,29 @@ LifeView.prototype.init = function (lifegrid) {
 	this.cells = $('td.cell');	
 	
 	$("td").mousedown(function (ev) {
-		self.select = true;
+		myself.select = true;
 		ev.preventDefault();
-		self.makeAlive( $(this));	
-		//self.makeAlive( $(this));
+		myself.makeAlive( $(this));	
+		//myself.makeAlive( $(this));
 	});
 
 	$("td").mouseup(function (ev) {
-		self.select = false;
+		myself.select = false;
 				
-		//self.makeAlive( $(this));
+		//myself.makeAlive( $(this));
 	});
 	
 	$("td").mouseenter(function (evt){
-		if (self.select){
-			self.makeAlive( $(this));	
+		if (myself.select){
+			myself.makeAlive( $(this));	
 		}
 		evt.preventDefault();	
 	} );
 
 	$("button.goBtn").click(function (ev) {
-    	//self.clickUpdate();
-    	self.life.tick();    	
-    	self.update();
+    	//myself.clickUpdate();
+    	myself.life.tick();    	
+    	myself.update();
     });
     
     this.timer;
@@ -92,53 +92,53 @@ LifeView.prototype.init = function (lifegrid) {
     	if( $(this).hasClass('stopped') ){
     		$(this).toggleClass('stopped').toggleClass('running');
 			$(this).text("Stop");
-    		self.startStopTimer($(this), ev);
+    		myself.startStopTimer($(this), ev);
     	} else if ($(this).hasClass('running')){
   			$(this).toggleClass('stopped').toggleClass('running');
-    		clearInterval(self.timer);
+    		clearInterval(myself.timer);
     		$(this).text("Run");
   		}	 
     });
     
     //Gosper glider gun
 	$("button.gunBtn").click(function (ev) {
-		self.clear();
-		self.makeAlive($('td[x="5"][y="1"]'));
-		self.makeAlive($('td[x="5"][y="2"]'));
-		self.makeAlive($('td[x="6"][y="1"]'));
-		self.makeAlive($('td[x="6"][y="2"]'));
-		self.makeAlive($('td[x="3"][y="13"]'));
-		self.makeAlive($('td[x="3"][y="14"]'));
-		self.makeAlive($('td[x="4"][y="12"]'));
-		self.makeAlive($('td[x="4"][y="16"]'));
-		self.makeAlive($('td[x="5"][y="11"]'));
-		self.makeAlive($('td[x="5"][y="17"]'));
-		self.makeAlive($('td[x="6"][y="11"]'));
-		self.makeAlive($('td[x="6"][y="15"]'));
-		self.makeAlive($('td[x="6"][y="17"]'));
-		self.makeAlive($('td[x="6"][y="18"]'));
-		self.makeAlive($('td[x="7"][y="11"]'));
-		self.makeAlive($('td[x="7"][y="17"]'));
-		self.makeAlive($('td[x="8"][y="12"]'));
-		self.makeAlive($('td[x="8"][y="16"]'));
-		self.makeAlive($('td[x="9"][y="13"]'));
-		self.makeAlive($('td[x="9"][y="14"]'));
-		self.makeAlive($('td[x="1"][y="25"]'));
-		self.makeAlive($('td[x="2"][y="23"]'));
-		self.makeAlive($('td[x="2"][y="25"]'));
-		self.makeAlive($('td[x="3"][y="21"]'));
-		self.makeAlive($('td[x="3"][y="22"]'));
-		self.makeAlive($('td[x="4"][y="21"]'));
-		self.makeAlive($('td[x="4"][y="22"]'));
-		self.makeAlive($('td[x="5"][y="21"]'));
-		self.makeAlive($('td[x="5"][y="22"]'));
-		self.makeAlive($('td[x="6"][y="23"]'));
-		self.makeAlive($('td[x="6"][y="25"]'));
-		self.makeAlive($('td[x="7"][y="25"]'));
-		self.makeAlive($('td[x="3"][y="35"]'));
-		self.makeAlive($('td[x="3"][y="36"]'));
-		self.makeAlive($('td[x="4"][y="35"]'));
-		self.makeAlive($('td[x="4"][y="36"]'));
+		myself.clear();
+		myself.makeAlive($('td[x="5"][y="1"]'));
+		myself.makeAlive($('td[x="5"][y="2"]'));
+		myself.makeAlive($('td[x="6"][y="1"]'));
+		myself.makeAlive($('td[x="6"][y="2"]'));
+		myself.makeAlive($('td[x="3"][y="13"]'));
+		myself.makeAlive($('td[x="3"][y="14"]'));
+		myself.makeAlive($('td[x="4"][y="12"]'));
+		myself.makeAlive($('td[x="4"][y="16"]'));
+		myself.makeAlive($('td[x="5"][y="11"]'));
+		myself.makeAlive($('td[x="5"][y="17"]'));
+		myself.makeAlive($('td[x="6"][y="11"]'));
+		myself.makeAlive($('td[x="6"][y="15"]'));
+		myself.makeAlive($('td[x="6"][y="17"]'));
+		myself.makeAlive($('td[x="6"][y="18"]'));
+		myself.makeAlive($('td[x="7"][y="11"]'));
+		myself.makeAlive($('td[x="7"][y="17"]'));
+		myself.makeAlive($('td[x="8"][y="12"]'));
+		myself.makeAlive($('td[x="8"][y="16"]'));
+		myself.makeAlive($('td[x="9"][y="13"]'));
+		myself.makeAlive($('td[x="9"][y="14"]'));
+		myself.makeAlive($('td[x="1"][y="25"]'));
+		myself.makeAlive($('td[x="2"][y="23"]'));
+		myself.makeAlive($('td[x="2"][y="25"]'));
+		myself.makeAlive($('td[x="3"][y="21"]'));
+		myself.makeAlive($('td[x="3"][y="22"]'));
+		myself.makeAlive($('td[x="4"][y="21"]'));
+		myself.makeAlive($('td[x="4"][y="22"]'));
+		myself.makeAlive($('td[x="5"][y="21"]'));
+		myself.makeAlive($('td[x="5"][y="22"]'));
+		myself.makeAlive($('td[x="6"][y="23"]'));
+		myself.makeAlive($('td[x="6"][y="25"]'));
+		myself.makeAlive($('td[x="7"][y="25"]'));
+		myself.makeAlive($('td[x="3"][y="35"]'));
+		myself.makeAlive($('td[x="3"][y="36"]'));
+		myself.makeAlive($('td[x="4"][y="35"]'));
+		myself.makeAlive($('td[x="4"][y="36"]'));
 		
     });    
 }
@@ -149,34 +149,34 @@ LifeView.prototype.makeAlive = function(cell){
 		if (className === "cell willBeBorn"){
 			var x = cell.attr('x');
 			var y = cell.attr('y');
-			self.life.board[x][y].nextAlive= true;		
+			myself.life.board[x][y].nextAlive= true;		
 		}
 }	
 
 
 LifeView.prototype.startStopTimer = function(button, ev){
-	self.life.tick();    	
-   	self.update();	
-    self.timer = setTimeout(
-    		function(){self.startStopTimer(button)}, 
+	myself.life.tick();    	
+   	myself.update();	
+    myself.timer = setTimeout(
+    		function(){myself.startStopTimer(button)}, 
     		100);
 }
 
 LifeView.prototype.clickUpdate = function(){//no need
-	self.life.tick();    	
-    self.update();
+	myself.life.tick();    	
+    myself.update();
 }
 
 LifeView.prototype.clear =  function(){
 
 	for(var row=0; row<size/2; row++){
 		for(var col=0; col<size; col++){
-			self.life.board[row][col].alive = false;	
-			self.life.board[row][col].nextAlive = false;				
+			myself.life.board[row][col].alive = false;	
+			myself.life.board[row][col].nextAlive = false;				
 		}
 	}	
-	for( var ele=0; ele<self.cells.length;ele++){
-		$(self.cells[ele]).addClass('dead').removeClass('alive').removeClass('willBeBorn').removeClass('willDie');
+	for( var ele=0; ele<myself.cells.length;ele++){
+		$(myself.cells[ele]).addClass('dead').removeClass('alive').removeClass('willBeBorn').removeClass('willDie');
 	}
 }
 

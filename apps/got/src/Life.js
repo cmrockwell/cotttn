@@ -3,7 +3,7 @@
  */
 
 Life = function(number) {
-  var self ={  	
+  var myself ={  	
     board : new Array(number),
     makeBoard : function(){
       for (var i=0; i < number; i++){
@@ -73,7 +73,7 @@ Life = function(number) {
     		}	
     	}
     	// loop thru the cells calling getNeighbors
-    	//self.life.getNeighbors();
+    	//myself.life.getNeighbors();
     	for (var u= 0; u<this.board.length; u++){// yo clean code,  make it explicit
     		for (var v= 0; v<this.board.length; v++){
     			
@@ -87,7 +87,7 @@ Life = function(number) {
     }
     
   }
-  return self;
+  return myself;
 };
 
 Cell = function() {

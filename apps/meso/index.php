@@ -28,7 +28,7 @@ echo $IPage->title("cotttn | mesostic generator");
 
 <body>
 <div id="wrapper">
-    <?php echo $IPage->branding('c o t t t n | <span>mesostic poem generator<span>'); ?>
+    <?php echo $IPage->branding('c o t t t n | <span>mesostic poem generator</span>'); ?>
 	
 <div class="container-fluid">
 	<?php echo $IPage->navBar('apps', 3); ?>
@@ -71,11 +71,11 @@ echo $IPage->title("cotttn | mesostic generator");
 					 	
 					 	<form id="getSeedForm" class="getSeedForm"> 
 					 		<label>Search Phrase (optional): </label>
-					 		<input type="text" name="wordphrase" id="wordphrase" reqquired/> <br>
+					 		<input type="text" name="wordphrase" id="wordphrase" required/> <br>
 					 		<button type="submit" id="getphrase" name="getphrase">Get Wikipedia Abstract</button> 
 					 	</form> 
 			 			<div id="inputText">
-				 			<label for="seedText"> Seed Text: </label> <br>		 	
+				 			<label for="seedText"> Seed Text: </label> 	 	
 							<textarea rows="10" cols="100%" title="Paste seed text here." name="seedText" > </textarea>	
 			 			</div>
 					 	
@@ -103,12 +103,7 @@ echo $IPage->title("cotttn | mesostic generator");
 			   		</div>	
 			</div>
 		</div>
-	</div>			
-</div>	
-	
-	
-
-   </div>
+	</div>		
 	
 </div><!-- End content -->
 <?php echo $IPage->footer(); ?> 
