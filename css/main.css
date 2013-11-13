@@ -27,7 +27,7 @@
 	ul {padding:0; margin:0;}
 	p {line-height: 1.6em; }
 	
-	#wrapper{margin: 0 auto; width: 95%; padding: 10px; min-width: 1050px; /*overflow: auto;*/ }
+	#wrapper{margin: 0 auto; width: 95%; padding: 10px; min-width: 900px; /*overflow: auto;*/ }
 	strong {letter-spacing: 0.15em; font-weight: bold;}
 	#header{ background: url('../images/img03.jpg') no-repeat right bottom; height: 100px; position: relative; }
 	

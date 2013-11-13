@@ -61,7 +61,7 @@ echo $IPage->title("Chris Rockwell");
 					<p> This app was specificly designed for the Adobe AIR runtime. It is available through Google Play for Android.  
 						The page contains an embedded flash version of the application. </p>
 					<br>
-		            <p><a href="https://play.google.com/store/apps/details?id=com.chris.android.pwm" 
+		            <p><a href="https://play.google.com/store/apps/details?id=air.DateWheelClassic" 
 								class="btn btn-primary btn-large">See on Google Play »</a> </p>
 					
 					<div id="flashContent" >

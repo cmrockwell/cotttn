@@ -67,11 +67,11 @@ echo $IPage->title("cotttn | apps");
             <h2 id="ServerSide">Ruby on Rails</h2>
             <p>
             	Rails is super.  Why spend time to solving the same problems repeatedly? 
-            	The Rails web framework offers sensible conventions that expedite the development of new applications. Like Mesostica!
+            	The Rails web framework offers sensible conventions that expedite the development of new applications, such as Mesostica!
             </p>
             
             <br>
-            <p><button class="btn btn-primary btn-large disabled">Mesostica (coming soon)</button></p>
+            <p><a class="btn btn-primary btn-large" href="http://mesostica.com">Mesostica</a></p>
     	</div> <!--end hero unit -->        
 
        			

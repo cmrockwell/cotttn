@@ -19,11 +19,6 @@ echo $IPage->title("cotttn | mesostic generator");
 
 <script src="src/Mesostic.js"></script>
 <script src="src/MesoView.js"></script>   
-<script> 
-	$(function(){		
-		$('#meso-sb').addClass('active');
-	});
-</script>
 </head>
 
 <body>
@@ -117,6 +112,7 @@ $(function() {
 	var mv = new MesoView(m);
     mv.init($('#wrapper')); 
 });
-</script>   
+</script>  
+<?php echo $IPage->stdScript('#meso-sb'); ?> 
 </body>
 </html>

@@ -14,7 +14,7 @@
 					<div class="alert alert-success">Thank You for the email! You will have a response ASAP :-)</div>
 				<?php } ?>
 					
-				<form class="form-horizontal" method="post" action="/contact">
+				<form class="form-horizontal" method="post">
 					<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf']; ?>" />
 					<div class="control-group">
 					  <label class="control-label" for="inputName">Name</label>

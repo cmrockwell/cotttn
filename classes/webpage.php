@@ -48,6 +48,18 @@ class webpage
             // $headertxt = "<h1>".$htext."</h1>";
             // return $headertxt;	
     // }
+
+    public function stdScript($pageId = "home"){ //#pwm-sb
+    	return "<script> 
+			$(function(){		
+				$('{$pageId}').addClass('active');
+				var menu = $('.sidebar-nav');
+				var hero = $('.span9 .hero-unit'); 
+				menu.height() > hero.height() ? hero.height(menu.height() - 40 ) :
+					 menu.height(hero.height() + 80);
+			});
+		</script>";
+    }
     
     public function branding($h1Text='chris rockwell')//($ipath="images/pond.jpg", $btext="INP271 Project"){
     {    return '<div class="chris" id="header"> <h1>'.$h1Text.'</h1> </div> <!-- end header-->';

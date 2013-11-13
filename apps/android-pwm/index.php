@@ -12,12 +12,7 @@ echo $IPage->title("cotttn | android pwm");
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 <?php echo $IPage->style('../../css/main.css'); ?>
 <script src="../../lib/jquery.js"></script>
-<script> 
-	$(function(){		
-		$('#pwm-sb').addClass('active');
-		$('.sidebar-nav').height($('.span9 .hero-unit').height()+80)
-	});
-</script>
+<?php echo $IPage->stdScript('#pwm-sb'); ?>
 </head>
 <body>
 <div id="wrapper">
